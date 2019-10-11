@@ -1,0 +1,259 @@
+<section class="form" hidden [hidden]="modalFormCorreo">
+    {% set formId = 'formCorreo' %}
+    {% include 'form-default.html' %}
+    <input type="hidden" name="meio_captacao" value="SITE_CORREO" />
+    <button type="button" class="btn-close " on="tap:AMP.setState({ modalFormCorreo: true })">X</button>
+    <div class="form-group">
+        <h3 class="vw-title-form">Envíanos un correo</h3>
+    </div>
+    <div class="form-group">
+        <input type="text" name="nome" placeholder="Nombre Completo" required="true">
+    </div>
+    <div class="form-group">
+        <input type="tel" name="telefone" {{maskTelefone}} placeholder="Celular" required="true">
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Correo" required="true">
+    </div>
+    <div class="form-group">
+        <select name="" id="" required="true">
+            <option value="">Asunto</option>
+            <option value="nuevos">Carros Nuevos</option>
+            <option value="posventa">Servicios Posventa</option>
+            <option value="otros">Otros asuntos</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea name="" id="" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+    </div>
+    <div class="politica">
+        <label for="checkbox">
+            <input type="checkbox" name="acepto_politica" checked value="si" id="checkbox">
+            <a href="#" on="tap:AMP.setState({openModal: false})">
+                Acepto Políticas de Privacidad
+            </a>
+        </label>
+    </div>
+    <div class="alert-info" submitting>
+        <template type="amp-mustache">
+            <span class="alert-info-span">
+                Enviando formulário...
+            </span>
+        </template>
+    </div>
+    <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+            <span class="alert-danger-span">
+                {% verbatim %}
+                {{ message}}
+                {% endverbatim %}
+            </span>
+        </template>
+    </div>
+    <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+    </div>
+    </form>
+</section>
+
+<!-- modal form Test Drive -->
+<section class="form" hidden [hidden]="modalFormTestDrive">
+    {% set formId = 'formTestDrive' %}
+    {% include 'form-default.html' %}
+    <input type="hidden" name="meio_captacao" value="SITE_TESTDRIVE" />
+    <button type="button" class="btn-close " on="tap:AMP.setState({ modalFormTestDrive: true })">X</button>
+    <div class="form-group">
+        <h3 class="vw-title-form">Test Drive</h3>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Nombre Completo" name="nome" required="true">
+    </div>
+    <div class="form-group">
+        <input type="email" placeholder="Correo" name="email" required="true">
+    </div>
+    <div class="form-group">
+        <input type="tel" placeholder="Celular" {{maskTelefone}} name="telefone" required="true">
+    </div>
+
+    {% include 'select-cars.html' %}
+
+    <div class="form-group">
+            <input name="data" type="date" id="" placeholder="Fecha tentativo" required>
+    </div>
+    <div class="form-group">
+        <select name="" id="">
+            <option value="">Horario tentativo</option>
+            <option value="">Mañana</option>
+            <option value="">tarde</option>
+            <option value="">Cualquiera</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea name="" id="" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+    </div>
+    <div class="politica">
+        <label for="checkbox">
+            <input type="checkbox" name="acepto_politica" checked value="si" id="checkbox">
+            <a href="#" on="tap:AMP.setState({openModal: false})">
+                Acepto Políticas de Privacidad
+            </a>
+        </label>
+    </div>
+    <div class="alert-info" submitting>
+        <template type="amp-mustache">
+            <span class="alert-info-span">
+                Enviando formulário...
+            </span>
+        </template>
+    </div>
+    <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+            <span class="alert-danger-span">
+                {% verbatim %}
+                {{ message}}
+                {% endverbatim %}
+            </span>
+        </template>
+    </div>
+    <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+    </div>
+    <button on='tap:sidebar1.close' class="btn-close-mobile"></button>
+    </form>
+</section>
+
+<!-- modal form Cita Traller -->
+<section class="form" hidden [hidden]="modalFormCita">
+
+    {% set formId = 'formCitaTaller' %}
+    {% include 'form-default.html' %}
+    <input type="hidden" name="meio_captacao" value="SITE_CITATALLER" />
+    <button type="button" class="btn-close " on="tap:AMP.setState({ modalFormCita: true })">X</button>
+    <div class="form-group">
+        <h3 class="vw-title-form">Cita Taller</h3>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Nombre Completo" name="nome" required="true">
+    </div>
+    <div class="form-group">
+        <input type="email" placeholder="Correo" name="email" required="true">
+    </div>
+    <div class="form-group">
+        <input type="tel" placeholder="Teléfonos" {{maskTelefone}} name="telefone" required="true">
+    </div>
+
+    {% include 'select-cars.html' %}
+
+    <div class="form-group">
+        <input type="text" placeholder="Placa" name="placa" required="true">
+    </div>
+    <div class="form-group">
+        <textarea name="" id="" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+    </div>
+    <div class="politica">
+        <label for="checkbox">
+            <input type="checkbox" name="checkbox" checked id="checkbox">
+            <a href="#" on="tap:AMP.setState({openModal: false})">
+                Acepto Políticas de Privacidad
+            </a>
+        </label>
+    </div>
+    <div class="alert-info" submitting>
+        <template type="amp-mustache">
+            <span class="alert-info-span">
+                Enviando formulário...
+            </span>
+        </template>
+    </div>
+    <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+            <span class="alert-danger-span">
+                {% verbatim %}
+                {{ message}}
+                {% endverbatim %}
+            </span>
+        </template>
+    </div>
+    <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+    </div>
+    </form>
+
+</section>
+
+<section class="form" hidden [hidden]="modalFormWhats">
+    <div class="content-modal">
+
+    <amp-state id="myUrls">
+        <script type="application/json">
+            {
+                "nuevos": {
+                    "url": "https://api.whatsapp.com/send?phone=55573203744090&text=Asunto%3A%20Nuevos"
+                },
+                "posventa": {
+                    "url": "https://api.whatsapp.com/send?phone=55573203744090&text=Asunto%3A%20Posventa"
+                },
+                "general": {
+                    "url": "https://api.whatsapp.com/send?phone=55573203744090&text=Asunto%3A%20Informacion%20General"
+                }
+            }
+        </script>
+    </amp-state>
+
+    {% set formId = 'formWhats' %}
+
+    {% include 'form-default.html' %}
+    <input type="hidden" name="meio_captacao" value="SITE_WHATSAPP" />
+    <button type="button" class="btn-close " on="tap:AMP.setState({ modalFormWhats: true })">X</button>
+    <div class="form-group">
+        <h3 class="vw-title-form">Habla con un asesor por Whatsapp</h3>
+    </div>
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Nombre Completo" required="true">
+    </div>
+    <div class="form-group">
+        <input type="tel" name="telefone" {{ maskTelefone }} placeholder="Celular" required="true">
+    </div>
+    <div class="form-group" id="unidade">
+        <select name="" id="" on="change:AMP.setState({currentUrl: event.value, newUrl: event.value })">
+            <option value="">Asunto</option>
+            <option value="nuevos">Venta de vehículos Nuevos</option>
+            <option value="posventa">Posventa</option>
+            <option value="general"> Información General</option>
+        </select>
+    </div>
+    <div class="politica">
+        <label for="checkbox">
+            <input type="checkbox" name="acepto_politica" checked value="si" id="checkbox">
+            <a href="#" on="tap:AMP.setState({openModal: false})">
+                Acepto Políticas de Privacidad
+            </a>
+        </label>
+    </div>
+    <div class="alert-info" submitting>
+        <template type="amp-mustache">
+            <span class="alert-info-span">
+                Enviando formulario...
+            </span>
+        </template>
+    </div>
+    <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+            <span class="alert-danger-span">
+                {% verbatim %}
+                {{ message}}
+                {% endverbatim %}
+            </span>
+        </template>
+    </div>
+    <button class="btn closeInSend" type="submit" value="Subscribe">
+        Enviar
+    </button>
+    <a [href]="myUrls[newUrl].url" on="tap:{{formId}}.clear"
+    class="linkwhats" target="_blank">
+        Abrir WhatsApp
+    </a>
+    </form>
+</div>
+</section>
+{% include './modal-politica.html' %}

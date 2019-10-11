@@ -1,0 +1,108 @@
+<nav class="menu-vertical border-right " id="menu-vertical">
+    <ul class="nav-items-menu-vertical">
+        <li class="nav-item">
+            <a href="index.html" class="">
+                <amp-img class="" src="./src/images/logo_Honda.png" width="60" height="60">
+                </amp-img>
+            </a>
+        </li>
+
+        <li class="nav-item link-padrao">
+            <a href="carros-honda-concesionario-colwagen-chia.html" class="">
+                <amp-img alt="imagem de um veiculo" src="./src/images/icon-car.svg" width="35" height="35"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Modelos
+            </a>
+        </li>
+
+        <li class="nav-item link-padrao">
+            <a href="ofertas-promociones-honda-concesionario-colwagen-chia.html
+" class="">
+                <amp-img alt="A view of the sea" src="./src/images/icon-bell.svg" width="25" height="25"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Ofertas
+            </a>
+        </li>
+
+        <li class="nav-item link-padrao">
+            <a href="sedes-honda-concesionario-colwagen-chia.html
+" class="">
+                <amp-img alt="A view of the sea" src="./src/images/icon-home.svg" width="25" height="25"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Nuestras<br>
+                sedes
+            </a>
+        </li>
+
+        <li class="nav-item link-padrao">
+            <a href="cita-taller-honda-concesionario-colwagen-chia.html
+" class="">
+                <amp-img alt="A view of the sea" src="./src/images/icon-medal.svg" width="25" height="25"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Cita Taller
+            </a>
+        </li>
+        <li class="nav-item w-100" id="btn-plus-menu-vertical">
+            <button
+                on="tap:AMP.setState({ hideMenuVertical: hideMenuVertical == null ? false : !hideMenuVertical }),sidebar2.open"
+                class="btn-plus-menu-vertical">
+                <amp-img alt="imagem de uma tres pontinhos mostrando" src="./src/images/icon-ellipsis.svg" width="35"
+                    height="35" class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                <div class="link-mas">
+                    Más
+                </div>
+            </button>
+        </li>
+        <li class="nav-item logo_colwagen_nav">
+            <a href="http://colwagen.co/" class="w-100">
+                <amp-img class="logo-bottom-menu-vertical" src="./src/images/logo_colwagen.png" width="75" height="50">
+                </amp-img>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- início do submenu -->
+<nav hidden [hidden]="hideMenuVertical" class="menu-vertical" id="submenu-vertical">
+    <ul class="nav-items-menu-vertical">
+        <li class="nav-item  link-padrao">
+            <a href="convenio-corporativo-honda-concesionario-colwagen-chia.html" class="">
+                <amp-img alt="imagem de uma pasta" src="./src/images/icon-corporative.svg" width="30" height="30"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Corporativo
+            </a>
+        </li>
+
+        <li class="nav-item  link-padrao">
+            <a href="seguro-de-carro-honda-concesionario-colwagen-chia.html" class="">
+                <amp-img alt="imagem de um sifrao de dinheo" src="./src/images/icon-writing-gray.svg" width="30"
+                    height="30" class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Finazul
+            </a>
+        </li>
+
+        <li class="nav-item link-padrao">
+            <a href="repuestos-accesorios-honda-concesionario-colwagen-chia.html" class="">
+                <amp-img alt="A view of the sea" src="./src/images/extension-24px.svg" width="30" height="30"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Repuestos y Accessorios
+            </a>
+        </li>
+        <li class="nav-item link-padrao">
+            <a href="contacto-honda-concesionario-colwagen-chia.html" class="">
+                <amp-img alt="A view of the sea" src="./src/images/perm_phone_msg-24px.svg" width="30" height="30"
+                    class="icon-menu-vertical img-grayscale">
+                </amp-img>
+                Contáctanos
+            </a>
+        </li>
+    </ul>
+</nav>

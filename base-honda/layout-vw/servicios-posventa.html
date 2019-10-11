@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  <title>Servicios Posventa | Colwagen</title>
+
+  <link rel="canonical" href="https://amp.dev/pt_br/documentation/guides-and-tutorials/start/create/basic_markup/">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+
+  <style amp-custom>
+      /* CSS GLOBAL */
+      @font-face {
+          font-family: open-sans;
+          src: url('./src/fonts/OpenSans-Bold.ttf');
+          src: url('./src/fonts/OpenSans-Regular.ttf');
+      }
+  
+      ::-webkit-scrollbar {
+          height: 1px;
+      }
+  
+      .body 
+      {
+          font-family: open-sans;
+          height: 100vh;
+      }
+  
+      .container-vw {
+          width: 100%  ;
+          padding-right: 15px;
+          padding-left: 15px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+          max-width: 1170px ;
+          box-sizing: border-box;
+      }
+  
+      .container-main-vw {
+          width: 100%;
+          padding-right: 15px;
+          padding-left: 140px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+      }
+  
+      .container-internal-car-vw {
+          width: 100%;
+          padding-right: 150px;
+          padding-left: 80px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+      }
+  
+      .container-m60 {
+          width: 100%;
+          padding-right: 60px;
+          padding-left: 60px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+      }
+  
+      .container-fluid {
+          width: 100%;
+          max-width: 100% ;
+          padding: 0px 15px;
+          box-sizing: border-box;
+      }
+  
+      .container 
+      {
+          width: 100%;
+          padding-right: 15px;
+          padding-left: 15px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+          max-width: 1170px ;
+      }
+  
+      .container-m30 
+      {
+          width: 100%;
+          padding-right: 30px;
+          padding-left: 30px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+      }
+  
+      .container-main-home {
+          width: 100%;
+          padding-right: 90px;
+          padding-left: 90px;
+          margin-right: auto;
+          margin-left: auto;
+          box-sizing: border-box;
+      }
+  
+      .color_vw_gray {
+          color: #666666;
+      }
+  
+      .bg-vw {
+          background-color: #0099dd;
+      }
+  
+      .bg_colwagen
+      {
+          background-color: #d52b29; 
+      }
+  
+      .color_vw 
+      {
+          color: #009ADA;
+      }
+  
+      .color_audi 
+      {
+          color: #CE0031;
+      }
+  
+      .bg_audi
+      {
+          background-color: #CE0031;
+      }
+  
+      .color_honda
+      {
+          color: #5B5B5B;
+      }
+  
+      .bg_honda
+      {
+          background-color: #5B5B5B;
+      }
+  
+      .color_hyundai
+      {
+          color: #013368;
+      }
+  
+      .bg_hyundai
+  
+      {
+          background-color: #013368;
+      }
+  
+      .color_vw 
+      {
+          color: #009ADA;
+      }
+  
+      .vw-font-small {
+          font-size: 12px  ;
+      }
+  
+      .vw-font-medium {
+          font-size: 14px  ;
+      }
+  
+      .vw-font-large {
+          font-size: 22px;
+      }
+  
+      .vw-font-xlarge {
+          font-size: 40px;
+          margin-left: 15px ;
+      }
+  
+      .vw-font-black {
+          color: black;
+      }
+  
+      .bg_vw { background-color: #009ADA; }
+      .vw-color-gray { color: #808890; }
+  
+      .w-20 { width: 20%; }
+      .w-50 { width: 50%; margin: 0 auto; }
+      .w-60 { width: 60%; margin: 0 auto; }
+      .w-80 { width: 80%; }
+      .w-100 { width: 100%; }
+  
+      .p-10 { padding: 10px 0  ; }
+      .p-15 { padding: 15px 0; }
+      .p-30 { padding: 30px 0  ; }
+      .p-45 { padding: 45px 0; }
+  
+      .pl-15 { padding-left: 15px ; }
+      .pl-20 { padding-left: 20px ; }
+  
+      .pb-15 { padding-bottom: 15px  ; }
+      .pb-30 { padding-bottom: 30px  ; }
+      .pb-60 { padding-bottom: 60px  ; }
+      .pb-90 { padding-bottom: 90px  ; }
+  
+      .h-100 { height: 100%; }
+  
+      .mt-15 { margin-top: 15px; }
+      .mt-30 { margin-top: 30px; }
+      .mt-45 { margin-top: 45px; }
+      .mt-60 { margin-top: 60px  ; }
+  
+      .mb-0 { margin-bottom: 0px ; }
+      .mb-5 { margin-bottom: 5px  ;}
+      .mb-10 { margin-bottom: 10px  ; }
+      .mb-15 { margin-bottom: 15px ; }
+      .mb-20 { margin-bottom: 20px  ; }
+      .mb-30 { margin-bottom: 30px  ; }
+      .mb-45 { margin-bottom: 45px  ; }
+      .mb-60 { margin-bottom: 60px  ; }
+      .mb-90 { margin-bottom: 90px  ; }
+  
+      .ml-5 { margin-left: 5px  ; }
+      .ml-10 { margin-left: 10px  ; }
+      .ml-45 { margin-left: 45px  ; }
+  
+      .mr-10 { margin-right: 10px  ; }
+      .mr-15 { margin-right: 15px  ; }
+      .mr-20 { margin-right: 20px  ; }
+      .mr-30 { margin-right: 30px  ; }
+      .mr-45 { margin-right: 45px  ; }
+      .mr-120 { margin-right: 120px   }
+  
+      .py-5 { padding: 5px 0  ; }
+  
+      .my-5 { margin: 5px 0  ; }
+      .my-10 { margin: 10px 0; }
+      .my-15 { margin: 15px 0  ; }
+      .my-20 { margin: 20px 0; }
+      .my-30 { margin: 30px 0  ; }
+      .mx-20 { margin: 20px 0; }
+      .mx-40 { padding: 0 40px  ; }
+  
+      .section-banner { height: 600px; }
+  
+      .menu-vertical { width: 7%; }
+  
+      .nav-items-menu-vertical {
+          display: flex;
+          flex-direction: column;
+      }
+  
+      .nav-item-menu-vertical { border-bottom: 1px solid #ccc; }
+  
+      .text-center { text-align: center; }
+  
+      .text-black { color: #323232  ; }
+  
+      .bg-light-gray { background-color: #d9dbda; }
+  
+      .text-bold { font-weight: bold  ; }
+  
+      .justify-content-space-between { justify-content: space-between; }
+  
+      .flex-space-between {
+          display: flex;
+          justify-content: space-between;
+      }
+  
+      .flex-column {
+          display: flex;
+          flex-direction: column; 
+      }
+  
+      .flex-align-vertical {
+          display: flex; 
+          align-items: center;
+      }
+  
+      .flex-align-horizontal { display: flex; }
+  
+      .flex-align-horizontal-center {
+          display: flex; 
+          justify-content: center;
+      }
+  
+      .flex-end {
+          display: flex;
+          justify-content: flex-end;
+      }
+  
+      amp-img > img,
+      body > section.section-banner > figure > amp-img > img {
+        object-fit: auto  ;
+      }
+  
+      amp-img > img { object-fit: cover; }
+  
+      a,
+      li {
+          text-decoration: none  ;
+          margin-left: 0  ;
+          margin-right: 0  ;
+          padding-left: 0  ;
+          padding-right: 0  ;
+      }
+  
+      ul 
+      {
+          list-style-type: none;
+          margin: 0  ;
+          padding: 0  ;
+      }
+  
+      figure {
+          margin: 0  ;
+          padding: 0  ;
+      }
+  
+      input,
+      select,
+      option {
+        margin: 0  ;
+        padding: 0  ;
+      }
+  
+      /* CSS DA PÁGINA */
+      /*#menu-vertical-vw:hover ~ #submenu-vertical-vw,
+      #submenu-vertical-vw:hover {
+      display: block  ;
+      position: fixed;
+      margin-left: 97px  ;
+      box-shadow: none;
+      border-left: 1px solid #dee1e3;
+      box-shadow: 5px -10px 20qpx rgba(0,0,0,.1);
+      } 
+      */
+  
+      .menu-vertical-vw {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: white;
+        box-shadow: 5px -10px 20px rgba(0,0,0,.1);
+        min-width: 96px;
+        max-width: 116px;
+      }
+  
+      #submenu-vertical-vw {
+        z-index: 1;
+        top: 0  ;
+        margin-left: 90px  ;
+        background-color: white  ;
+        box-shadow: 5px -10px 20px rgba(0,0,0,.1);
+        width: 245px;
+        left: 6px;
+        border-left: 1px solid #CCC;
+      }
+  
+      myClass {
+        display: flex;
+        align-items: center;
+      }
+  
+      .visible {
+        display: block;
+      }
+  
+      .nav-item-menu-vertical {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 6px 0;
+        height: 70px  ;
+      }
+  
+      .btn-plus-menu-vertical {
+        margin: 0 auto; 
+        background: none; 
+        border: none;
+      }
+      
+      .logo-bottom-menu-vertical {
+        margin-bottom: 5px;
+      }
+  
+      .icon-menu-vertical-bottom {
+        position: fixed; 
+        bottom: 0;
+      }
+  
+      .nav-item-menu-vertical:nth-child(1) > a > amp-img,
+      .nav-item-menu-vertical:nth-child(7) > a > amp-img {
+        margin-top: 12px;
+      }
+  
+      .dropdown-submenu-top {
+        display: none  ;
+      }
+  
+      /*.submenu-top:hover ~ .dropdown-submenu-top {
+        display: flex  ;
+      }
+      */
+  
+      /*
+      #linea-de-atencion:hover .dropdown-submenu-top {
+        display: block  ;
+      }
+      */
+  
+      /* Classe alternancia AMP */
+      .display-flex-submenu-top {
+        visibility: visible;
+        display: flex  ;
+      }
+  
+      .close {
+        visibility: hidden;
+        display: none;
+      }
+  
+      /* INICIO CSS VW */
+      .btn-banner-vw {
+        position: absolute;
+        bottom: 20px;
+        z-index: 1;
+        margin-left: calc(50% - 66px);
+        background-color: #009ADA;
+        padding: 10px 30px;
+      }
+  
+      .btn-image-vw {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        z-index: 1;
+        background-color: #009ADA;
+        padding: 5px 20px;
+      }
+
+      .link-vw {
+        color: #323232;
+      }
+  
+      .link-vw:hover {
+        color: #009ADA  ;
+      }
+  
+      .link-image-list-cars {
+        z-index: 1;
+        margin-left: calc(50% - 44px)  ;
+        text-decoration: none  ;
+        font-size: 1.5rem;
+        bottom: 0;
+      }
+  
+      .btn-vw-img-sm {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        z-index: 1;
+        background-color: #009ADA  ;
+        padding: 5px 15px  ;
+        color: white;
+      }
+  
+      .nav-link {
+        display: flex  ;
+      }
+  
+      .icon-dropdown {
+        margin-left: 5px;
+      }
+  
+      .icon-dropdown-submenu {
+        margin-bottom: 15px;
+      }
+  
+      .nav-items-submenu-top {
+        align-items: center;
+      }
+  
+      .container-button-mobile {
+        padding: 9px 0  ;
+      }
+  
+      .nav-item-submenu-top {
+        width: 100%;
+      }
+  
+      .submenu-top {
+  
+      }
+  
+      .nav-submenu-link {
+        padding-right: 45px  ;
+      }
+  
+      .flex-space-around {
+        display: flex;
+        justify-content: space-around;
+      }
+  
+      .nav-link:after {
+        content: '';
+        border-right: 1px solid white;
+        margin: 0 20px;
+      }
+  
+      .amp-lightbox {
+        position: absolute  ;
+        top: 51px  ;
+      }
+  
+      .selection {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+  
+      .selection_car {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+  
+      .selection_car amp-img {
+        max-width: 100%;
+        width: 100%;
+      }
+  
+      .selection_car_content {
+        margin: 0px ;
+        text-align: center;
+      }
+  
+      .btn-close
+      {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: transparent;
+        border: 1px solid #ccc ;
+        border-radius: 5px;
+        color: #444;
+      }
+  
+      .btn-close-mobile {
+        background: none;
+        border: none;
+        padding-left: 20px
+      }
+  
+      .logo-vw-footer {
+        margin-left: 5px; 
+        position: relative; 
+        bottom: 4px;
+      }
+  
+      .logo-colwagen-footer {
+        margin-left: 5px;
+      }
+  
+      .logo-vw-desktop-footer {
+        position: relative; 
+        bottom: 6px  ;
+      }
+  
+      .btn-close-vw
+      {
+        position: absolute;
+        top: -40px;
+        right: 30px;
+        background-color: white;
+      }
+  
+      .text-white {
+        color: white;
+      }
+  
+      .text-gray-vw {
+        color: #666666  ;
+      }
+  
+      .text-dark-gray {
+        color: #353325;
+      }
+  
+      .text-right {
+        text-align: right;
+      }
+  
+      .header__logo-img
+      {
+        margin: 15px;
+      }
+  
+      .header__logo figure
+      {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: center;
+        flex-flow: row;
+      }
+      /* Inicio custom main */
+      .container.main
+      {
+        max-width: 100% ;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .banner-vw-mobile > img {
+        object-fit: cover;
+      }
+  
+      .block_main
+      {
+        width: 100%;
+        height:  120px;
+        display: flex;
+        flex-direction: row;
+      }
+  
+      .list-home-images {
+        display: flex; 
+        justify-content: space-around;
+      
+      }
+  
+      .container-figures {
+        max-width: 80%;
+        height: 80%;
+      }
+  
+      article:nth-child(odd) .block_main {
+        flex-direction: row-reverse;
+      }
+  
+      article:nth-child(odd) .block_main {
+        flex-direction: row-reverse;
+      }
+  
+      .block_link 
+      {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .block_main_brand
+      {
+        height: 100%;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .block_main__figure
+      {
+        margin: 0;
+      }
+  
+      .block_main__figure
+      {
+        margin: 0;
+      }
+  
+      .scroll-top {
+        background-color: #CCC;
+        text-align: right;
+      }
+  
+      .footer-vw {
+        padding-bottom: 95px;
+      }
+  
+      .footer-vw-internal-list-car {
+        margin-top: 270px;
+      }
+  
+      .container-footer {
+        width: 100%;
+        padding-right: 80px;
+        padding-left: 155px;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+      }
+  
+      .container-footer-list-cars {
+        width: 100%;
+        padding-right: 200px  ;
+        padding-left: 200px  ;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+      }
+  
+      .container-social-icons-footer {
+        position: relative  ;
+        top: 62px  ;
+      }
+  
+      .link-footer {
+        margin: 0 5px ;
+        border-right: 2px solid #ccc;
+      }
+  
+      .link-footer > a {
+        color: black  ;
+        font-size: 14px  ;
+        padding: 5px 10px  ;
+      }
+  
+      .link-footer > a:hover {
+        color: #0099dd  ;
+        font-size: 14px  ;
+        font-weight: bold;
+      }
+  
+      .title-social-icons-footer {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+  
+      .link-reweb-footer {
+        position: relative; 
+        font-size: 1.1rem;
+        text-align: right;
+        top: 30px;
+      }
+  
+      .footer-to-top {
+        background-color: #CCC;
+        align-items: center;
+      }
+  
+      .title-footer-list-cars {
+        font-size: 1.4rem;
+      }
+  
+      /* Custom destaque */
+      .detail_title {
+        padding: 10px 0;
+      }
+  
+      .detail_content {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .detail_title h2 {
+        margin: 0;
+        padding: 10px;
+        font-size: 32px;
+      }
+  
+      p.detail_content {
+        margin: 0px ;
+      }
+  
+      .link-menu-vertical:hover {
+        color: black  ;
+        font-weight: bold;
+      }
+  
+      .form {
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+  
+      .detail_image {
+        width: 100%;
+      }
+  
+      form {
+        right: 0;
+        height: 520px;
+        background-color: #575758;
+        box-sizing: border-box;
+        z-index: 1;
+        margin: 0px auto 15px;
+        padding: 20px 30px;
+        display: flex;
+        flex-flow: column nowrap;
+        border: 1px solid transparent;
+      }
+
+      .form-servicios-posventa {
+         height: 780px;
+      }
+
+      .form-servicios-posventa-mobile {
+        height: 780px;
+      }
+
+      .form-contactanos {
+        position: absolute;
+        background-color: rgba(0,0,0,.7);
+        z-index: 1;
+      }
+  
+      .form-group {
+        width: 100%;
+        display: flex;
+        margin-bottom: 9px;
+        align-items: center;
+      }
+  
+      .form-group h3 {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        margin: 0px;
+        padding: 5px 0px;
+      }
+  
+      .form-group select,
+      .form-group input {
+        background-color: #313131;
+        width: 100%;
+        padding: 0px;
+        padding-left: 15px  ;
+        height: 40px ;
+        outline: none;
+        box-shadow: none;
+        border: 1px solid white  ;
+        box-sizing: border-box;
+        color: #fff;
+      }
+  
+      .form-group textarea {
+        background-color: #313131;
+        padding: 0px;
+        padding: 15px  ;
+        outline: none;
+        box-shadow: none;
+        border: 1px solid white  ;
+        box-sizing: border-box;
+        color: #fff;
+      }
+  
+      ::placeholder {
+        color: #fff ;
+      }
+  
+      .form-group button {
+        padding: 10px 15px;
+        width: 150px;
+        margin-top: 5px;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+      }
+  
+      .form-group[placeholder] {
+        color: white  ;
+      }
+  
+      .form_datasheet a{
+        color: #fff;
+        padding: 10px 15px ;
+      }
+
+      #checkbox-politicas {
+        width: 15px;
+        margin-right: 10px;
+      }
+
+      /* Inicio custom texo descritivo */
+      .internal-car_descrition {
+        padding: 15px;
+      }
+  
+      .form-group select, 
+      .form-group input {
+        background-color: #313131;
+        border-radius: 0;
+      }
+  
+      .deion-title {
+        font-size: 38px;
+      }
+  
+      .deion_content {
+        font-size: 18px;
+      }
+  
+      .detail_content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 100%;
+        width: 100%;
+      }
+  
+      .detail_image {
+        width: 100%;
+      }
+  
+      .vw-title-form {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+  
+      .header-vw-mobile-desktop {
+        display: none;
+      }
+      
+      .logo-vw-footer {
+        position: relative; 
+        bottom: 6px;
+      }
+
+      .logo-colwagen-footer {
+        margin-left: 5px;
+      }
+
+      .container-logos-footer {
+        margin-top: 40px;
+      }
+
+      .header-vw-mobile-desktop {
+        padding: 5px 0;
+        border-bottom: 1px solid #CCC;
+      }
+
+      .icon-volve-arriba {
+        margin-left: 5px; 
+        margin-top: 3px; 
+        background: none;
+        bottom: 3px;
+      }
+
+      .name-car-mobile {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vw-subtitle {
+        font-size: 30px;
+        color: #009ADA;
+        margin-left: 15px;
+      }
+
+      .vw-title-info-contactanos {
+        font-size: 30px;
+        color: #009ADA;
+      }
+
+      .container-tel-vitrina {
+        margin-left: 15px;
+        margin-top: 30px;
+      }
+
+      .banner-vw-mobile,
+      .main-vw-mobile,
+      .footer-vw-mobile,
+      .contactanos-banner-form-mobile {
+        display: none;
+      }
+
+      @media (max-width: 450px) {
+        .detail_image amp-img {
+          max-width: 100% ;
+          max-height: 245px ;
+        }
+        .form {
+          margin: 10px auto;
+          max-width: 100%;
+        }
+        .container-vw {
+          padding-right: 15px ;
+          padding-left: 15px ;
+        }
+        .selection {
+          width: 100%;
+  
+        }
+      }
+  
+      @media (min-width: 768px) {
+        .detail_content {
+          flex-direction: row;
+        }
+  
+        .detail_image {
+          width: 100%;
+          padding: 10px;
+        }
+        .container-vw {
+          padding-right: 15px ;
+          padding-left: 15px ;
+        }
+      }
+  
+      /* MEDIA DESKTOP XL PARA VW */
+      @media(min-width: 1024px) {
+        .nav-item-menu-vertical {
+          padding: 9px 0;
+        }
+  
+        .icon-menu-vertical {
+          margin-bottom: 15px  ;
+        }
+  
+        .social-icons {
+          padding-left: 90px  ;
+        }
+  
+        .container-footer {
+          padding-right: 170px  ;
+        }
+  
+        .container-social-icons-footer {
+          position: relative  ;
+          top: 62px  ;
+        }
+  
+        .form {
+          max-width: 320px;
+        }
+  
+        .list-home-images {
+          justify-content: center;
+        }
+        /*.detail_image {
+          width: 70%;
+        }*/
+      }
+  
+      /* MIDIA PARA TABLETS */
+      @media(max-width: 992px) {
+        .header-vw-desktop {
+          display: none;
+        }
+        .header-vw-mobile-desktop {
+          display: block  ;
+        }
+        .banner-vw-desktop {
+          display: none;
+        }
+        .banner-vw-mobile {
+          display: block;
+        }
+        .main-vw-desktop {
+          display: none;
+        }
+        .main-vw-mobile {
+          display: block;
+        }
+        .footer-vw-desktop {
+          display: none;
+        }
+        .footer-vw-mobile {
+          display: block  ;
+        }
+        .detail_content {
+          flex-direction: row;
+        }
+        .contactanos-banner-form-desktop {
+          display: none;
+        }
+        .contactanos-banner-form-mobile {
+          display: block;
+        }
+      }
+  </style>
+
+</head>
+
+<body class="body">
+  
+  <!-- inicio header desktop -->
+  <section class="bg-vw w-100 header-vw-desktop py-5">
+    <nav class="menu-vertical-vw border-right" id="menu-vertical-vw">
+      <ul class="nav-items-menu-vertical text-center" style="align-items: center">
+        <li class="nav-item-menu-vertical" style="width: 100%">
+          <a href="index.html" class="text-gray-vw  text-bold flex-align-vertical flex-column vw-font-small">
+            <amp-img class="" src="./src/images/logo-vw.png"
+            width="50"
+            height="50">
+            </amp-img>
+          </a>
+        </li>
+        
+        <li class="nav-item-menu-vertical" style="width: 100%">
+          <a href="selecao.html" class="link-menu-vertical text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+            <amp-img alt="A view of the sea"
+            src="./src/images/icon-car.svg"
+            width="25"
+            height="25"
+            class="icon-menu-vertical"
+            >
+            </amp-img>
+            Modelos
+          </a>
+        </li>
+
+        <li class="nav-item-menu-vertical" style="width: 100%">
+          <a href="#" class="link-menu-vertical text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+            <amp-img alt="A view of the sea"
+            src="./src/images/icon-bell.svg"
+            width="20"
+            height="20"
+            class="icon-menu-vertical"
+            >
+            </amp-img>
+            Ofertas
+          </a>
+        </li>
+
+        <li class="nav-item-menu-vertical" style="width: 100%">
+          <a href="nuestras-sedes.html" class="link-menu-vertical text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+            <amp-img alt="A view of the sea"
+            src="./src/images/icon-home.svg"
+            width="20"
+            height="20"
+            class="icon-menu-vertical"
+            >
+            </amp-img>
+            Nuestras<br>
+            sedes
+          </a>
+        </li>
+
+        <li class="nav-item-menu-vertical" style="width: 100%">
+          <a href="servicios-posventa.html" class="link-menu-vertical text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+            <amp-img alt="A view of the sea"
+            src="./src/images/icon-medal.svg"
+            width="20"
+            height="20"
+            class="icon-menu-vertical"
+            >
+            </amp-img>
+            Servicios<br> 
+            Posventa
+          </a>
+        </li>
+        <li class="nav-item-menu-vertical w-100" id="btn-plus-menu-vertical">
+          <button on="tap:AMP.setState({ hideMenuVertical: false })" class="btn-plus-menu-vertical text-gray-vw text-bold flex-align-vertical flex-column vw-font-small" on='tap:sidebar2.open' style="">
+            <amp-img alt="A view of the sea"
+            src="./src/images/icon-ellipsis.svg"
+            width="20"
+            height="20"
+            class="icon-menu-vertical"
+            >
+            </amp-img>
+            <div class="link-menu-vertical">
+              Más
+            </div>
+          </button>
+        </li>
+        <li class="nav-item-menu-vertical icon-menu-vertical-bottom">
+          <a href="index.html" class="text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+            <amp-img class="logo-bottom-menu-vertical" src="./src/images/logo_colwagen.png"
+            width="75"
+            height="50" 
+            >
+            </amp-img>
+          </a>
+        </li>
+      </ul>
+    </nav>
+ 
+    <!-- início do submenu -->
+    <nav hidden [hidden]="hideMenuVertical" class="menu-vertical-vw" id="submenu-vertical-vw">
+        <ul class="nav-items-menu-vertical nav-items-submenu-top text-center">
+          <li class="nav-item-menu-vertical nav-item-submenu-top">
+            <a href="#" on="tap:AMP.setState({ hideMenuVertical: true })" class="text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+              <amp-img 
+              class="icon-dropdown"  
+              src="./src/images/icon-left-arrow.svg"
+              width="25"
+              height="25"
+              >
+              </amp-img>
+              Volver
+            </a>
+          </li>
+          
+          <li class="nav-item-menu-vertical nav-item-submenu-top">
+            <a href="corporativo.html" class="text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+              <amp-img alt="A view of the sea"
+              src="./src/images/icon-corporative.svg"
+              width="25"
+              height="25"
+              class="icon-menu-vertical"
+              >
+              </amp-img>
+              Corporativo
+            </a>
+          </li>
+
+          <li class="nav-item-menu-vertical nav-item-submenu-top">
+            <a href="#" class="text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+              <amp-img alt="A view of the sea"
+              src="./src/images/icon-bell.svg"
+              width="20"
+              height="20"
+              class="icon-menu-vertical"
+              >
+              </amp-img>
+              Finazul
+            </a>
+          </li>
+
+          <li class="nav-item-menu-vertical nav-item-submenu-top">
+            <a href="" class="text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+              <amp-img alt="A view of the sea"
+              src="./src/images/icon-home-gray-vw.svg"
+              width="20"
+              height="20"
+              class="icon-menu-vertical"
+              >
+              </amp-img>
+              Blog
+            </a>
+          </li>
+
+          <li class="nav-item-menu-vertical icon-menu-vertical-bottom">
+            <a href="" class="text-gray-vw text-bold flex-align-vertical flex-column vw-font-small">
+              <amp-img 
+              class="" 
+              src="./src/images/logo_colwagen.png"
+              width="75"
+              height="50"
+              class="logo-bottom-menu-vertical"
+              >
+              </amp-img>
+            </a>
+          </li>
+        </ul>
+    </nav>
+    <!-- fim do submenu -->
+    
+<!-- início do header superior(barrinha azul) -->
+<header class="container-vw" >
+<nav class="flex-align-horizontal flex-space-around flex-align-vertical">
+  <ul class="flex-align-horizontal">
+    <li class="nav-link">
+      <a on="tap:AMP.setState({ hideGreeting: false })" href="#" class="text-white text-bold vw-font-medium" id="linea-de-atencion">Línea de atención 
+        <amp-img 
+          class="icon-dropdown" 
+          src="./src/images/icon-arrow-down.svg" 
+          width="10" 
+          height="10">
+        </amp-img>
+      </a>
+    </li>
+    <li class="nav-link">
+      <a href="#" class="text-white text-bold vw-font-medium">Envíanos un correo</a>
+    </li>
+    <li class="nav-link">
+      <a href="#" class="text-white text-bold vw-font-medium">Hable con un acesor por Whatsapp</a>
+    </li>
+    <li class="nav-link">
+      <a href="#" class="text-white text-bold vw-font-medium">Agenda un Test Drive</a>
+    </li>
+    <li class="nav-link">
+      <a href="#" class="text-white text-bold vw-font-medium">Cita Taller</a>
+    </li>
+  </ul>
+  <!-- inicio icones redes sociais -->
+  <ul class="flex-align-horizontal" style="position: relative; top: 2px;">
+    <li class="nav-icon">
+      <a href="">
+        <amp-img 
+        class="" 
+        src="./src/images/icon-facebook.svg"
+        width="20"
+        height="20">
+        </amp-img>
+      </a>
+    </li>
+    <li class="nav-icon ml-10">
+      <a href="">
+        <amp-img 
+          class="" 
+          src="./src/images/icon-twitter.svg"
+          width="20"
+          height="20">
+        </amp-img>
+      </a>
+    </li>
+    <li class="nav-icon ml-10">
+      <a href="">
+        <amp-img 
+        class="" 
+        src="./src/images/icon-youtube.svg"
+        width="20"
+        height="20"></amp-img>
+        </amp-img>
+      </a>
+    </li>
+  </ul>      
+</nav>
+
+<nav class="flex-align-horizontal flex-space-around flex-align-vertical submenu-top" 
+hidden [hidden]="hideGreeting">
+  <ul class="flex-align-horizontal">
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Compacto
+      </a>
+    </li>
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Deportivo
+      </a>
+    </li>
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Familiares
+      </a>
+    </li>
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Todoterreno
+      </a>
+    </li>
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Eléctricos
+      </a>
+    </li>
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Berlina
+      </a>
+    </li>
+    <li class="nav-submenu-link my-15">
+      <a href="#" class="text-white text-bold vw-font-medium">
+        Modelos IQ Drive
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <button on="tap:AMP.setState({ hideGreeting: true })" on="tap:AMP.setState({ myClass: 'close' })" type="submit" class="btn-plus-menu-vertical">
+      <amp-img alt="A view of the sea"
+        src="./src/images/icon-close.svg"
+        width="20"
+        height="20"
+        >
+      </amp-img>
+    </button>
+  </ul>
+</nav>
+<!-- fim dos icones redes sociais -->
+</header>
+
+  </section>
+  <!-- fim hea  der desktop -->
+
+  <!-- início header mobile -->
+  <section class="background-header-white border-bottom w-100 header-vw-mobile-desktop">
+    <header class="container-m30">
+      <div class="flex-align-horizontal flex-space-between">
+        <ul class="flex-align-vertical h-100" style="padding: 0;">
+          <li>
+              <a href="#" class="mr-10">
+                <amp-img 
+                  class="" 
+                  src="./src/images/logo_colwagen.png"
+                  width="45" 
+                  height="30" 
+                  style="position: relative; top: 5px; ">
+                </amp-img>
+              </a>
+
+              <a href="#">
+                <amp-img 
+                class="" 
+                src="./src/images/logo-vw.png"
+                width="30" 
+                height="30" 
+                style="position: relative; top: 3px;">
+                </amp-img>
+              </a>
+          </li>
+        </ul>
+        <button class="btn-menu-mobile" type="button" on='tap:sidebar1.toggle' style="background: none; border: none;">
+          <amp-img 
+          class="" 
+          src="./src/images/icon-menu.svg" 
+          id="icon-open-menu-mobile" 
+          alt="ícone menu mobile" 
+          width="30" 
+          height="30" 
+          style="position: relative; top: 3px;"></amp-img>  
+        </button>
+        
+        <amp-sidebar id="sidebar1" class="w-100" layout="nodisplay" side="right">
+          <div class="container-m30 border-bottom container-button-mobile">
+            <button on='tap:sidebar1.close' class="btn-close-mobile">
+              <amp-img 
+              class="" 
+              src="./src/images/icon-close-blue.svg"
+              width="25"
+              height="25">
+              </amp-img>
+            </button>
+          </div>
+
+          <ul class="flex-align-horizontal-center flex-column text-center">
+            <li style="padding: 10px 0;" class="border-bottom"><a href="https://www.google.com.br" on="tap:idTwo.scrollTo">Nav item 1</a></li>
+            <li style="padding: 10px 0;" class="border-bottom"><a href="https://www.google.com.br" on="tap:idTwo.scrollTo">Nav item 2</a></li>
+            <li style="padding: 10px 0;" class="border-bottom"><a href="https://www.google.com.br" on="tap:idTwo.scrollTo">Nav item 3</a></li>
+            <li style="padding: 10px 0;" class="border-bottom"><a href="https://www.google.com.br" on="tap:idFour.scrollTo">Nav item 4</a></li>
+            <li style="padding: 10px 0;" class="border-bottom"><a href="https://www.google.com.br" on="tap:idTwo.scrollTo">Nav item 5</a></li>
+            <li style="padding: 10px 0;" class="border-bottom"><a href="https://www.google.com.br" on="tap:idTwo.scrollTo">Nav item 6</a></li>
+          </ul>
+        </amp-sidebar>
+      </div>
+    </header>
+  </section>
+  <!-- fim header mobile -->
+  
+  <!-- início banner + form -->
+  <section class="container-vw contactanos-banner-form-desktop mb-30">
+    <h1 class="vw-title-internal-car vw-font-xlarge mt-30">
+      Servicios Posventa
+    </h1>
+    <h2 class="vw-subtitle">
+      Seguro de Carros
+    </h2>
+    <div class="detail_content">
+
+      <article class="detail_image">
+          <amp-img alt="A view of the sea"
+          src="./src/images/banner-seguro.png"
+          height="780"
+          >
+          <form 
+          class="form-contactanos form-servicios-posventa" 
+          method="post"
+          action-xhr="https://example.com/subscribe"  
+          target="_top" >
+          <div class="form-group">
+            <h3 class="vw-title-form">
+              Agenda tu Cita Taller
+            </h3>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Nombre completo:" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Celular:" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Correo:" required>
+          </div>
+          <div class="form-group">
+            <select name="" id="" required>
+              <option value="">Modelo:</option>
+              <option value="">Modelo 01</option>
+              <option value="">Modelo 02</option>
+              <option value="">Modelo 03</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="text" name="" id="" placeholder="Kilometraje" required>
+          </div>
+          <div class="form-group">
+            <input type="date" name="" id="" placeholder="Fecha" required>
+          </div>
+          <div class="form-group">
+            <select name="" id="" required>
+              <option value="">Horario</option>
+              <option value="">7:00am</option>
+              <option value="">7:30am</option>
+              <option value="">8:00am</option>
+              <option value="">8:30am</option>
+              <option value="">9:00am</option>
+              <option value="">9:30am</option>
+              <option value="">10:00am</option>
+              <option value="">10:30am</option>
+              <option value="">11:00am</option>
+              <option value="">11:30am</option>
+              <option value="">12:00m</option>
+              <option value="">12:30pm</option>
+              <option value="">1:00pm</option>
+              <option value="">1:30pm</option>
+              <option value="">2:00pm</option>
+              <option value="">2:30pm</option>
+              <option value="">3:00pm</option>
+              <option value="">3:30pm</option>
+              <option value="">4:00pm</option>
+              <option value="">4:30pm</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select name="" id="" required>
+              <option value="">Quien lleva el carro?</option>
+              <option value="">Servicio de grúa a mi cargo*</option>
+              <option value="">Yo llevo el vehícula directo al taller</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select name="" id="" required>
+              <option value="">Alternativa de movilidad?</option>
+              <option value="">Rentar un vehículo a mi cargo</option>
+              <option value="">Taxi a mi cargo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea name="" id="" cols="30" rows="8" placeholder="Mensaje:" required></textarea>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="" class="" id="checkbox-politicas" required>
+            <span class="text-white">Acepto Políticas de Privacidad</span>
+          </div>
+          <div class="form-group flex-align-horizontal-center ">
+            <button class="bg-vw vw-font-small text-bold" type="submit">Enviar</button>
+          </div>
+        </form>
+        </amp-img>
+      </article>
+    </div>
+  </section>
+  <!-- fim banner + form -->
+
+  <!-- início banner + form mobile -->
+  <section class="container-vw contactanos-banner-form-mobile mb-30">
+      <h1 class="vw-title-internal-car vw-font-xlarge mt-30">Contáctanos</h1>
+      <div class="detail_content">
+  
+        <article class="detail_image">
+            <amp-img alt="A view of the sea"
+            src="./src/images/banner-seguro.png"
+            width="800"
+            height="500"
+            layout="responsive"
+            >
+          </amp-img>
+        </article>
+  
+        <article class="form">
+  
+          <form 
+            class="form-servicios-posventa form-servicios-posventa-mobile" 
+            method="post"
+            action-xhr="https://example.com/subscribe"  
+            target="_top" >
+            <div class="form-group">
+                <h3 class="vw-title-form">
+                  Agenda tu Cita Taller
+                </h3>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Nombre completo:" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Celular:" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Correo:" required>
+              </div>
+              <div class="form-group">
+                <select name="" id="" required>
+                  <option value="">Modelo:</option>
+                  <option value="">Modelo 01</option>
+                  <option value="">Modelo 02</option>
+                  <option value="">Modelo 03</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" name="" id="" placeholder="Kilometraje" required>
+              </div>
+              <div class="form-group">
+                <input type="date" name="" id="" placeholder="Fecha" required>
+              </div>
+              <div class="form-group">
+                <select name="" id="" required>
+                  <option value="">Horario</option>
+                  <option value="">7:00am</option>
+                  <option value="">7:30am</option>
+                  <option value="">8:00am</option>
+                  <option value="">8:30am</option>
+                  <option value="">9:00am</option>
+                  <option value="">9:30am</option>
+                  <option value="">10:00am</option>
+                  <option value="">10:30am</option>
+                  <option value="">11:00am</option>
+                  <option value="">11:30am</option>
+                  <option value="">12:00m</option>
+                  <option value="">12:30pm</option>
+                  <option value="">1:00pm</option>
+                  <option value="">1:30pm</option>
+                  <option value="">2:00pm</option>
+                  <option value="">2:30pm</option>
+                  <option value="">3:00pm</option>
+                  <option value="">3:30pm</option>
+                  <option value="">4:00pm</option>
+                  <option value="">4:30pm</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="" id="" required>
+                  <option value="">Quien lleva el carro?</option>
+                  <option value="">Servicio de grúa a mi cargo*</option>
+                  <option value="">Yo llevo el vehícula directo al taller</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="" id="" required>
+                  <option value="">Alternativa de movilidad?</option>
+                  <option value="">Rentar un vehículo a mi cargo</option>
+                  <option value="">Taxi a mi cargo</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="8" placeholder="Mensaje:" required></textarea>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="" class="" id="checkbox-politicas" required>
+                <span class="text-white">Acepto Políticas de Privacidad</span>
+              </div>
+              <div class="form-group flex-align-horizontal-center ">
+                <button class="bg-vw vw-font-small text-bold" type="submit">Enviar</button>
+              </div>
+          </form>
+  
+        </article>
+      </div>
+  </section>
+  <!-- fim banner + form mobile -->
+
+  <!-- Texto  descritivo interna  -->
+  <section class="container internal-car pl-15 mb-60">
+    <article class="internal-car_descrition">
+      <h2 class="vw-title-info-contactanos pl-15">
+        Programa tu visita al taller
+      </h2> 
+      <p class="detail_content text-detail-contactanos pl-15">
+        La fecha y hora de atención solicitada por los clientes está sujeta a disponibilidad de las agendas
+        y talleres de Colwagen. También puedes reservar tus citas para el mantenimiento de tu vehículo vía telefónica, llámanos, nosotros la aisnaremos con el
+        horario que más te convenga. 
+      </p>
+      <!--<a class="btn-info-contactanos" href="#">
+        <amp-img 
+        alt=""
+        src="./src/images/icon-credit-card.svg"
+        width="15"
+        height="15"
+        >
+        </amp-img>
+        Pago en línea
+      </a> -->
+      <div class="container-tel-vitrina">
+        <h4 class="name-vitrina">Bogotá:</h4>
+        <p class="content-vitrina">(031) 484 2098</p>
+      </div>
+
+      <div class="container-tel-vitrina">
+        <h4 class="name-vitrina">Medellin:</h4>
+        <p class="content-vitrina">(034) 310 6818</p>
+      </div>
+
+      <div class="container-tel-vitrina">
+        <h4 class="name-vitrina">Cali:</h4>
+        <p class="content-vitrina">(032) 608 2218</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- início footer -->
+  <footer class=" footer-vw-desktop">
+      <div class="w-100 scroll-top p-10 mb-15">
+        <div class="container-vw">
+          <a href="#" class="container-vw vw-font-medium volver-arriba text-bold vw-font-black">
+            Volver arriba
+            <amp-img 
+              class="" 
+              src="./src/images/icon-arrow-up.svg" 
+              width="20" 
+              height="20">
+            </amp-img>
+          </a>
+        </div>
+      </div>
+  
+      <div class="container-vw">
+        <ul class="flex-align-vertical">
+          <ul class="flex-align-horizontal w-20">
+            <li class="mr-15">
+              <a href="home.html">
+                <amp-img 
+                  class="logo-vw-footer" 
+                  src="./src/images/logo-vw.png" 
+                  width="50" 
+                  height="50" 
+                >
+                </amp-img>
+              </a>
+            </li>
+            <li>
+              <a href="home.html">
+                <amp-img 
+                  class="" 
+                  src="./src/images/logo_colwagen.png" 
+                  width="75" 
+                  height="50">
+                </amp-img>
+              </a>
+            </li>
+          </ul>
+    
+          <ul class="group-links-footer flex-align-horizontal flex-align-vertical flex-align-horizontal-center w-60" style>
+            <li class="link-footer" style="display: flex;">
+              <a href="" class="vw-font-medium">Lorem ipsum</a>
+            </li>
+            <li class="link-footer" style="display: flex;">
+              <a href="" class="active">Lorem ipsum</a>
+            </li>
+            <li class="link-footer" style="display: flex;">
+              <a href="" class="vw-font-medium">Lorem ipsum</a>
+            </li>
+            <li class="link-footer" style="display: flex;">
+              <a href="" class="vw-font-medium">Lorem ipsum</a>
+            </li>
+            <li class="link-footer" style="display: flex;">
+              <a href="" class="vw-font-medium">Lorem ipsum</a>
+            </li>
+          </ul>
+  
+          <!-- início redes sociais footer -->
+          <div class="flex-end container-social-icons-footer flex-column w-20">
+            <h3 class="title-social-icons-footer text-center mb-15" style="text-align: right; font-size: 14px;">Síguenos</h3>
+            <ul class="flex-align-vertical flex-end mb-15">
+              <li class="mr-30">
+                <a href="">
+                  <amp-img 
+                    class="" 
+                    src="./src/images/icon-facebook-black.svg"
+                    width="30"
+                    height="30">
+                  </amp-img>
+                </a>
+              </li>
+  
+              <li class="mr-30">
+                <a href="">
+                  <amp-img 
+                    class="" 
+                    src="./src/images/icon-twitter-black.svg"
+                    width="30"
+                    height="30">
+                  </amp-img>
+                </a>
+              </li>
+  
+              <li>
+                <a href="mr-30">
+                  <amp-img 
+                    class="" 
+                    src="./src/images/icon-youtube-black.svg"
+                    width="30"
+                    height="30">
+                  </amp-img>
+                </a>
+              </li>
+            </ul>
+            <h4 class="link-reweb-footer pb-15" style="font-size: 14px;">Desarollado por<a href="" class="vw-font-medium text-bold" style="color: black; font-size: 14px;"> Reweb</a></h4>
+          </div>
+        <!-- fim redes sociais footer -->
+      </div>
+  
+  </footer>
+  <!-- fim footer -->
+
+  <!-- início footer mobile -->
+  <footer class="w-100 footer-vw-mobile mb-20">
+    <div class="footer-to-top flex-align-horizontal flex-end" style="padding-right: 90px; padding-top: 3px; padding-bottom: 3px;">
+      <p class="text-bold" style="font-size: 12px; padding: 0; margin: 0;">Volver arriba</p>
+      <amp-img 
+        class="icon-volve-arriba" 
+        src="./src/images/icon-arrow-up.svg" 
+        width="12" 
+        height="12" 
+        style="">
+        <a href="">
+
+        </a>
+      </amp-img>
+    </div>
+
+    <div class="flex-align-horizontal-center mb-20 container-logos-footer" style="">
+      <figure class="mr-15" style="margin-top: 5px;">
+        <a href="home.html">
+          <amp-img 
+            class="logo-colwagen-footer" 
+            src="./src/images/logo_colwagen.png" 
+            width="90" 
+            height="65" 
+            style="">
+          </amp-img>
+        </a>
+      </figure>
+
+      <figure>
+        <a href="home.html">
+          <amp-img 
+            class="" 
+            src="./src/images/logo-vw.png" 
+            width="65" 
+            height="65" 
+            style="margin-left: 5px; position: relative;">
+          </amp-img>
+        </a>
+      </figure>
+    </div>
+
+    <div class="flex-align-horizontal-center" style="margin-bottom: 5px;">
+      <a href="">
+        <amp-img 
+          class="" 
+          src="./src/images/icon-facebook-black.svg" 
+          width="20" 
+          height="20" 
+          style="margin-left: 5px;">
+        </amp-img>
+      </a>
+
+      <a href="">
+        <amp-img 
+          class="" 
+          src="./src/images/icon-twitter-black.svg" 
+          width="20" 
+          height="20" 
+          style="margin-left: 5px;">
+        </amp-img>
+      </a>
+
+      <a href="">
+        <amp-img 
+          class="" 
+          src="./src/images/icon-youtube-black.svg" 
+          width="20" 
+          height="20" 
+          style="margin-left: 5px;">
+        </amp-img>
+      </a>
+    </div>
+
+    <div class="w-100">
+      <p class="text-center" style="font-size: 12px;">Desarollado por <a href="" style="color: black; font-weight: bold;">Reweb</a></p>
+    </div>
+  </footer>
+  <!-- fim footer mobile -->
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block description %}
+<meta name="description" content="Repuestos y Accesorios en Colwagen - Concesionario Honda en Bogotá y Chía">
+{% endblock %}
+{% block title %}Repuestos y Accesorios en Colwagen - Concesionario Honda en Chía
+{% endblock %}
+{% block page %}
+
+<!-- início banner + form -->
+<section class="container-vw posventa mb-30">
+  <h1 class="title_h1">Repuestos y accesorios</h1>
+  <div class="detail_content">
+
+    <article class="detail_image">
+      <amp-img alt="" src="./src/images/banner-acessorios.png" width="800" height="500">
+      </amp-img>
+
+      <div class="descrition">
+        <p>
+          Los repuestos originales Honda le ofrecen seguridad y un mejor rendimiento de su vehículo.
+        </p>
+      </div>
+    </article>
+
+    <article class="form_contacto">
+      {% set formId = 'formPostVentaCitaTaller' %}
+      {% include 'includes/form-default.html' %}
+      <input type="hidden" name="meio_captacao" value="SITE_POSVENTA_REPUESTOS" />
+      <div class="form-group">
+        <h3 class="vw-title-form">
+          SELECCIONA EL VEHÍCULO DEL CUAL QUIERES COTIZAR LOS REPUESTOSS
+        </h3>
+      </div>
+      <div class="form-group">
+        <input name="nome" type="text" placeholder="Nombre completo" required>
+      </div>
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo" required>
+      </div>
+      <div class="form-group">
+        <input name="plVIN del vehículo" type="text" placeholder="VIN del vehículo" required>
+      </div>
+
+      {% include 'includes/select-cars.html' %}
+
+      <div class="form-group">
+        <input name="placa" type="text" placeholder="Placa" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="" id="" placeholder="¿Qué repuesto deseas cotizar?" required>
+      </div>
+
+      <div class="politica">
+        <label for="checkbox">
+          <input type="checkbox" name="acepto_politica" checked value="si" id="">
+          <a href="#" on="tap:AMP.setState({openModal: false})">
+            Acepto Políticas de Privacidad
+          </a>
+        </label>
+      </div>
+      <div class="alert-info" submitting>
+        <template type="amp-mustache">
+          <span class="alert-info-span">
+            Enviando formulário...
+          </span>
+        </template>
+      </div>
+      <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+          <span class="alert-danger-span">
+            {% verbatim %}
+            {{ message}}
+            {% endverbatim %}
+          </span>
+        </template>
+      </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+      </div>
+      </form>
+
+    </article>
+  </div>
+</section>
+<!-- fim banner + form -->
+
+{% endblock %}

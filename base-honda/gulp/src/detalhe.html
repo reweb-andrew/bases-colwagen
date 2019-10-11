@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+{% block description %}
+  <meta name="description" content="Carro Nuevo 0km Volkswagen Bogotá y Chía">
+{% endblock %}
+{% block title %}Carro Nuevo 0km Volkswagen Chia | Colwagen{% endblock %}
+{% block page %}
+<amp-list height="1300" reset-on-refresh src="{{apiBaseURL}}/api/vehicle/dealers/QUERY_PARAM(id)" single-item>
+  <div overflow="" role="button" class="showMore showDetail" tabindex="0">
+    <a class="btn btnShowMore" href="#">Ver Más
+    </a>
+  </div>
+  <template type="amp-mustache">
+    {% verbatim %}
+
+    {{#result}}
+
+ <!-- início banner desktop -->
+ <section class="section-banner-detail banner-vw-desktop" style="position: relative; overflow: hidden;">
+    <figure>
+        {{#images_lp_banner}}
+        <amp-img height="520" layout="fixed-height" src="https://img1.static.reweb.io/i/1920/520/{{secureImageURL}}{{image}}"></amp-img>
+      {{/images_lp_banner}}	
+    </figure>
+  </section>
+  <!-- fim banner desktop -->
+
+  
+    <!-- início banner + form -->
+    <section class="container-vw mb-30">
+      <div class="text_detail">
+        <h1 class="title_h1">{{name}}</h1>
+        <a href="carros-honda-concesionario-colwagen-chia.html">
+          <amp-img class="" src="./src/images/arrow.png" width="25" height="25">
+          </amp-img>
+          Regresar
+        </a>
+      </div>
+      <div class="detail_content">
+
+        <article class="detail_image">
+          <amp-img alt="A view of the sea"
+            src="https://img1.static.reweb.io/i/800/500/{{ secureImageURL}}{{image.image}}" width="800" height="500"
+            layout="responsive">
+          </amp-img>
+        </article>
+
+        <article class="form_contacto">
+
+          <form action-xhr="https://api.amp.reweb.io/api/lead/register" target="_top" method="POST" id="form-detail"
+            on="submit-success:modal-confirmation,form-detail.clear">
+            <input type="hidden" name="utm_source" value="QUERY_PARAM(utm_source)" data-amp-replace="QUERY_PARAM">
+            <input type="hidden" name="midia" value="QUERY_PARAM(m)" data-amp-replace="QUERY_PARAM">
+            <input type="hidden" name="referencia_externa" value="EXTERNAL_REFERRER"
+              data-amp-replace="EXTERNAL_REFERRER">
+            <input type="hidden" name="referencia_documento" value="DOCUMENT_REFERRER"
+              data-amp-replace="DOCUMENT_REFERRER">
+            <input type="hidden" name="meio_captacao" value="SITE_DETALHE" />
+
+            <div class="form-group">
+              <h3 class="vw-title-form">Solicita tu cotizacíon</h3>
+            </div>
+            <div class="form-group">
+              <input name="nome" type="text" placeholder="Nombre" required="true">
+            </div>
+            <div class="form-group">
+              <input name="email" type="email" placeholder="Correo" required="true">
+            </div>
+            <div class="form-group">
+              <input name="telefone" type="tel" required="required" placeholder="Celular" mask="000000000000000" />
+            </div>
+            <div class="form-group">
+              <input name="modelo" type="text" placeholder="Modelo" value="{{name}}" readonly required>
+            </div>
+            <div class="form-group">
+              <textarea name="mensagem" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+            </div>
+            <div class="politica">
+              <label for="checkbox">
+                <input type="checkbox" name="acepto_politica" checked value="si" id="checkbox">
+                <a href="#" on="tap:AMP.setState({openModal: false})">
+                  Acepto Políticas de Privacidad
+                </a>
+              </label>
+            </div>
+            <div class="alert-info" submitting>
+                <span class="alert-info-span">
+                  Enviando formulário...
+                </span>
+            </div>
+            <div class="alert-danger" submit-error>
+                <span class="alert-danger-span">
+                  {{ message }}
+                </span>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit">Enviar</button>
+            </div>
+
+          </form>
+
+          <div class="form_datasheet">
+            <a class="btn mt-10" target="_blank" href="//dealers.rewebmkt.com/files/{{file}}">
+              Descargar ficha técnica
+            </a>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- Texto  descritivo interna  -->
+    <section class="container-vw internal-car pl-15 mb-30">
+      <article class="internal-car_descrition">
+        <h2 class="detail-title pl-15">Descripción</h2>
+        <p class="detail_content pl-15">
+          {{description}}
+        </p>
+      </article>
+    </section>
+
+    <!-- Inicio carousel do imagens -->
+    <section class="container-vw mb-45">
+      <h2 class="detail-title pl-15">Galería de Imágenes</h2>
+
+      <amp-carousel id="carousel-with-lightbox" class="carousel-preview" height="180" layout="fixed-height"
+        type="carousel" lightbox>
+        {{#images}}
+        <amp-img src="https://img1.static.reweb.io/i/800/500/{{secureImageURL}}{{image}}" width="250" height="200"
+          alt="">
+        </amp-img>
+        {{/images}}
+      </amp-carousel>
+    </section>
+    <section class="container-vw nextSteps">
+      <h1 class="title_h1">Próximos pasos</h1>
+      <div class="nextSteps-content">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+          <h3>Línea de WhatsApp</h3>
+          <p>Contáctanos por WhatsApp y te asesoramos lo más pronto posible</p>
+          <button class="btn" on="tap:AMP.setState({ modalFormWhats: false })">
+            Contacta
+          </button>
+        </div>
+        <div>
+          <svg
+            height="32" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32"
+            xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Layer_1" />
+            <g id="steering_x5F_wheel">
+              <path
+                d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M16,4   c5.207,0,9.605,3.354,11.266,8H4.734C6.395,7.354,10.793,4,16,4z M16,18c-1.105,0-2-0.895-2-2s0.895-2,2-2s2,0.895,2,2   S17.105,18,16,18z M4,16c5.465,0,9.891,5.266,9.984,11.797C8.328,26.828,4,21.926,4,16z M18.016,27.797   C18.109,21.266,22.535,16,28,16C28,21.926,23.672,26.828,18.016,27.797z" />
+            </g>
+          </svg>
+          <h3>Test Drive</h3>
+          <p>Programa una fecha tentativa para realizar una prueba de ruta con su nuevo carro.</p>
+          <button class="btn" on="tap:AMP.setState({ modalFormTestDrive: false })">
+            Probarlo
+          </button>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;"><path d="M0 0h24v24H0z" opacity=".1" fill="none"/><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h4v1h-7v2h6c1.66 0 3-1.34 3-3V10c0-4.97-4.03-9-9-9z"/></svg>
+            <h3>Haznos tu Consulta</h3>
+            <p>Deja sus datos para que nuestros asesores te contacten por teléfono.</p>
+            <button class="btn" on="tap:AMP.setState({ modalFormCorreo: false })">
+              Consultar
+            </button>
+        </div>
+
+      </div>
+    </section>
+    {{/result}}
+    {% endverbatim %}
+  </template>
+</amp-list>
+{% endblock %}

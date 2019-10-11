@@ -1,0 +1,133 @@
+{# layout.twig #}
+{% set apiBaseURL = "https://api.amp.reweb.io" %}
+
+<!-- Api:  https://api.amp.reweb.io -->
+<!-- Local: http://localhost:1212 -->
+
+{% set maskTelefone = "mask='000000000000000'" %}
+{% set maskCEP = "mask='00000-000'" %}
+{% set maskData = "mask='00/00/0000'" %}
+{% set maskHora = "mask='00:00'" %}
+{% set maskCNPJ = "mask='00.000.000/0000-00'" %}
+{% set maskCPF = "mask='000.000.000-00'" %}
+{% set maskPlaca = "mask='LLL-0000'" %}
+
+<!DOCTYPE html>
+<html ⚡>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  {% block description %}{% endblock %}
+
+  <link rel="icon" type="image/png" href="./src/images/logo_Honda.png" />
+  <title>{% block title %}{% endblock %} </title>
+
+  <link rel="canonical" href="https://betosg.github.io/honda.colwagen.co" />
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+  </style><noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+    </style>
+  </noscript>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-lightbox-gallery"
+    src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-inputmask" src="https://cdn.ampproject.org/v0/amp-inputmask-0.1.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+  <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+
+  {% include 'includes/style.html' %}
+
+</head>
+
+<body class="body">
+  {% include 'includes/header.html' %}
+  {% block page %}{% endblock %}
+  {% include 'includes/footer.html' %}
+  {% include 'includes/modal-forms.html' %}
+  <amp-lightbox layout="nodisplay" id="modal-confirmation" style="transition: opacity 0.1s ease-in 0s; opacity: 1;">
+    </div>
+    <div tabindex="0" class="lightboxConfirmation">
+      <div class="col-lg-12">
+        <div class="lightbox-header">
+          <h3 class="texto-descritivo">¡Mensage enviada!</h3>
+          <button on="tap:modal-confirmation.close" class="closeModal user-valid valid">
+            <span aria-hidden="true">X</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </amp-lightbox>
+</body>

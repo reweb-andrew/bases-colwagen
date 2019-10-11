@@ -1,0 +1,23 @@
+
+<amp-list 
+height="50"
+src="{{apiBaseURL}}/api/vehicles/dealers/257"
+single-item
+>
+    <template type="amp-mustache">
+        <div class="form-group">
+            <select name="modelo" id="">    
+                
+                {% verbatim %}
+                    {{#results}}
+                        
+                        <option value="{{name}}">{{name}}</option>
+                        
+                    {{/results}}
+                {% endverbatim %} 
+                
+            </select>       
+        </div>  
+    </template> 
+</amp-list> 
+     

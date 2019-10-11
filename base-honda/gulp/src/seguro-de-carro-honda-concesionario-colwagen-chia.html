@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block description %} <meta name="description" content="Cotiza pólizas de seguros en Colwagen - Concesionario Honda en Bogotá y Chía
+">
+{% endblock %}
+{% block title %}Cotiza pólizas de seguros en Colwagen - Concesionario Honda en Chía
+{% endblock %}
+{% block page %}  
+
+  <!-- início banner + form -->
+  <section class="container-vw posventa mb-30">
+      <h1 class="title_h1">Seguros Finazul - Seguros de Carros Honda</h1>
+      <h2 class="title_h2"> Tu Honda siempre asegurado.</h2>
+      <div class="detail_content">
+  
+      <article class="detail_image">
+          <amp-img alt=""
+          src="./src/images/banner-seguro.png"
+          width="800"
+          height="500">
+        </amp-img>
+          <!-- Texto  descritivo interna  -->
+        <div class="descrition">
+          <h2 class="vw-title-info-contactanos">
+            Seguro para tu vehículo
+          </h2> 
+          <p>
+            Tu carro siempre asegurado. Cotiza aquí los diferentes seguros que tenemos para ti.
+          </p>
+        </div>
+      </article>
+  
+      <article class="form_contacto">
+          {% set formId = 'formPostVentaCitaTaller' %}
+          {% include 'includes/form-default.html' %}
+          <input type="hidden" name="meio_captacao" value="SITE_REPUESTOS" />
+          <div class="form-group">
+            <h3 class="vw-title-form">
+              Cotizar Su Seguro
+            </h3>
+          </div>
+          <div class="form-group">
+            <input name="nome" type="text" placeholder="Nombre completo" required>
+          </div>
+          <div class="form-group">
+            <input name="telefone" type="tel" {{maskTelefone}} placeholder="Celular" required>
+          </div>
+          <div class="form-group">
+            <input name="email" type="email" placeholder="Correo" required>
+          </div>
+          <div class="form-group">
+            <input name="cpf" type="text" placeholder="Cédula" required >
+          </div>
+          <div class="form-group">
+            <input name="placa" type="text" placeholder="Placa" required>
+          </div>
+          <div class="form-group">
+            <select name="" id="" required>
+              <option value="">Interesado en</option>
+              <option value="">Seguro</option>
+              <option value="">Póliza</option>
+              <option value="">SOAT</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea name="mesaje" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+          </div>
+          <div class="politica">
+              <label for="checkbox">
+                <input type="checkbox" name="acepto_politica" checked value="si" id="">
+                <a href="#" on="tap:AMP.setState({openModal: false})">
+                  Acepto Políticas de Privacidad
+                </a>
+              </label>
+            </div>
+            <div class="alert-info" submitting>
+              <template type="amp-mustache">
+                <span class="alert-info-span">
+                  Enviando formulário...
+                </span>
+              </template>
+            </div>
+            <div class="alert-danger" submit-error>
+              <template type="amp-mustache">
+                <span class="alert-danger-span">
+                  {% verbatim %}
+                  {{ message}}
+                  {% endverbatim %}
+                </span>
+              </template>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit">Enviar</button>
+            </div>
+            </form>
+  
+      </article>
+    </div>
+  </section>
+  <!-- fim banner + form -->
+
+{% endblock %}

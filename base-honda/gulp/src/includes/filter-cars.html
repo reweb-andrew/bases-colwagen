@@ -1,0 +1,38 @@
+<amp-state id="myState">
+  <script type="application/json">
+    {
+      "": ""
+    }
+  </script>
+</amp-state>
+<amp-list height="50" src="{{apiBaseURL}}/api/vehicles/dealers/257/categories" single-item class="w-100 mb-5 ">
+  <template type="amp-mustache">
+   
+    <div class="amp-filter" id="amp-filter">
+      <div class="container" >
+        <ul  class="filter " [class]="'filter ' + height" >
+          <li on="tap:AMP.setState({arrows:arrows == 'arrowUp' ? 'arrowDown' :  'arrowUp', height: height == 'filterHeightDown' ? 'filterHeightUp' : 'filterHeightDown'})" tabindex="" role="button">
+            <a href="#">Modelos:</a>
+            <div class="arrow">
+              <amp-img alt="imagem de um veiculo"  [class]="arrows" src="./src/images/icon-arrow-down.svg" width="25" height="25">
+              </amp-img>
+            </div>
+          </li>
+          {% verbatim %}
+          {{^ results}}
+          <p>Sem resultados</p>
+          {{/results}}
+
+          {{#results}}
+          <li class="filterCategory">
+            <a class="" on="tap:AMP.setState({arrows: 'arrowDown', height: 'filterHeightUp'})" href="#category{{id}}">
+              {{category}}
+            </a>
+          </li>
+          {{/results}}
+          {% endverbatim %}
+        </ul>
+      </div>
+    </div>
+  </template>
+</amp-list>

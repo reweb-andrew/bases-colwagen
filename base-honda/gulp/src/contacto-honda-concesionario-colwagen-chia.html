@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block description %}
+  <meta name="description" content="contáctanos en Colwagen - Concesionario Honda en Bogotá y Chía">
+{% endblock %}
+{% block title %}Contáctanos en Colwagen - Concesionario Honda en Chía
+{% endblock %}
+{% block page %}
+
+<!-- início banner + form -->
+<section class="container-vw mb-30">
+  <h1 class="title_h1">Contáctanos</h1>
+  <div class="detail_content">
+    <article class="detail_image">
+      <amp-img alt="imagen de un asistente sonriendo" src="./src/images/banner-contacto.png" width="800" height="500"
+        layout="responsive">
+      </amp-img>
+      <div class="internal-car_descrition">
+        <h2 class="detail-title pl-15">Horario de atención</h2>
+        <p class="detail_content pl-15">
+          Lunes a Viernes 8:00 am - 6:00 pm.
+        </p>
+        <p class="detail_content pl-15">
+          Sábado 8am a 12m.
+        </p>
+        <a href="sedes-honda-concesionario-colwagen-chia.html">
+          <button class="btn">Nuestras Sedes</button>
+        </a>
+        <a href="cita-taller-honda-concesionario-colwagen-chia.html">
+          <button class="btn">Agendar tu Cita de Taller</button>
+        </a>
+      </div>
+    </article>
+
+    <article class="form_contacto">
+
+      {% set formId = 'formContato' %}
+      {% include 'includes/form-default.html' %}
+      <input type="hidden" name="meio_captacao" value="SITE_CONTATO" />
+      <div class="form-group">
+        <h3 class="vw-title-form">Contáctanos</h3>
+      </div>
+      <div class="form-group">
+        <input name="nome" type="text" placeholder="Nombre" required>
+      </div>
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo" required>
+      </div>
+      <div class="form-group">
+        <input name="telefone" type="tel" {{maskTelefone}} placeholder="Celular" required>
+      </div>
+
+      <div class="form-group">
+        <select name="motivo" id="" required>
+          <option value="">Motivo del contacto</option>
+          <option value="">Administrativo</option>
+          <option value="">Nuevos</option>
+          <option value="">Posventa</option>
+          <option value="">Otros Asuntos</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea name="mensagem" id="" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+      </div>
+      <div class="politica">
+        <label for="checkbox">
+          <input type="checkbox" name="acepto_politica" checked value="si" id="">
+          <a href="#" on="tap:AMP.setState({openModal: false})">
+            Acepto Políticas de Privacidad
+          </a>
+        </label>
+      </div>
+      <div class="alert-info" submitting>
+        <template type="amp-mustache">
+          <span class="alert-info-span">
+            Enviando formulário...
+          </span>
+        </template>
+      </div>
+      <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+          <span class="alert-danger-span">
+            {% verbatim %}
+            {{ message}}
+            {% endverbatim %}
+          </span>
+        </template>
+      </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+      </div>
+      </form>
+
+    </article>
+  </div>
+</section>
+<!-- fim banner + form -->
+
+{% endblock %}

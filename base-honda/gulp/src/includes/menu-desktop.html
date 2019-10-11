@@ -1,0 +1,104 @@
+<header id="top" class="container-vw background-brand">
+    <amp-animation id="show" layout="nodisplay">
+        <script type="application/json">
+            {
+            "duration": "99999999999s",
+
+            "direction": "reverse",
+            "animations": [{
+                "selector": "#amp-filter",
+                "keyframes": [{
+                "transform": "translateY(-35px)"
+                }]
+            }]
+            }
+        </script>
+    </amp-animation>
+    <amp-animation id="show" layout="nodisplay">
+        <script type="application/json">
+            {
+            "duration": "99999999999s",
+
+            "direction": "alternate-reverse",
+            "animations": [{
+                "selector": "#amp-filter",
+                "keyframes": [{
+                "transform": "translateY(-33px)"
+                }]
+            }]
+            }
+        </script>
+    </amp-animation>
+    <amp-position-observer on="enter:show.cancel; exit:show.start" layout="nodisplay">
+    </amp-position-observer>
+    <nav class="header-menu">
+        <ul class="list">
+            <li class="nav-link menu-linea">
+                Línea de atención
+                <ul class="submenu-linea">
+                    <li class="lineas-type">
+                        Nuevos
+                    </li>
+
+                    <li>
+                        <a href="tel:0314842098"> Bogotá 031 4842098</a>
+                    </li>
+                    <li>
+                        <a href="tel:0343106818"> Medellín 034 3106818</a>
+                    </li>
+                    <li>
+                        <a href="tel:326082218"> Cali 032 6082218</a>
+                    </li>
+
+                    <li class="lineas-type">Posventa</li>
+                    <li>
+                        <a href="tel:0314842098"> Bogotá: 031 4842098</a>
+                    </li>
+                    <li>
+                        <a href="tel:0343106818"> Medellín: 034 3106818</a>
+                    </li>
+                    <li>
+                        <a href="tel:0326082218"> Cali: 032 6082218</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-link">
+                <a href="#" on="tap:AMP.setState({ modalFormCorreo: false })">Envíanos un correo</a>
+            </li>
+            <li class="nav-link">
+                <a href="#" on="tap:AMP.setState({ modalFormWhats: false })">Habla con un asesor por Whatsapp</a>
+            </li>
+            <li class="nav-link">
+                <a href="#" on="tap:AMP.setState({ modalFormTestDrive: false })">Agenda un Test Drive</a>
+            </li>
+            <li class="nav-link">
+                <a href="#" on="tap:AMP.setState({ modalFormCita: false })">Cita Taller</a>
+            </li>
+        </ul>
+        <!-- inicio icones redes sociais -->
+        <ul class=" list_icones">
+
+            <li class="nav-icon mr-5">
+                <a href="https://www.facebook.com/HondaColwagen" target="_blank">
+                    <amp-img src="./src/images/icon-facebook-black.svg" width="20" height="20">
+                    </amp-img>
+                </a>
+            </li>
+
+            <li class="nav-icon mr-5">
+                <a href="https://www.instagram.com/honda_colwagen_/" target="_blank">
+                    <amp-img src="./src/images/instagram.svg" width="20" height="20">
+                    </amp-img>
+                </a>
+            </li>
+
+            <li class="nav-icon mr-5">
+                <a href="https://co.linkedin.com/company/colwagen" target="_blank">
+                    <amp-img src="./src/images/botao-do-logotipo-do-linkedin.svg" width="20" height="20">
+                    </amp-img>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</header>

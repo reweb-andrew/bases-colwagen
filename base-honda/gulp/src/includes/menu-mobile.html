@@ -1,0 +1,207 @@
+<section id="top2" class="background-header-white border-bottom w-100 header-vw-mobile-desktop">
+    <amp-animation id="show2" layout="nodisplay">
+        <script type="application/json">
+                      {
+                        "duration": "99999999999s",
+                        "fill": "both",
+                        "iterations": "1",
+                        "direction": "reverse",
+                        "animations": [{
+                          "selector": "#amp-filter",
+                          "keyframes": [{
+                            "transform": "translateY(-48px)"
+                            
+                          }]
+                        }]
+                      }
+                    </script>
+    </amp-animation>
+
+    <amp-position-observer on="enter:show2.cancel; exit:show2.start" layout="nodisplay">
+    </amp-position-observer>
+    <header class="container">
+        <div class="menu-mobile">
+            <div class="logos-header-mobile h-100">
+                <a href="http://colwagen.co/" class="mr-10">
+                    <amp-img src="./src/images/logo_colwagen.png" width="45" height="30">
+                    </amp-img>
+                </a>
+
+                <a href="index.html">
+                    <amp-img src="./src/images/logo_Honda.png" width="30" height="30">
+                    </amp-img>
+                </a>
+            </div>
+
+            <button class="btn-menu-mobile" type="button" on='tap:sidebar1'>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <amp-sidebar id="sidebar1" class="w-100" layout="nodisplay" side="right">
+                <div class="containerd border-bottom container-button-mobile">
+                    <button on='tap:sidebar1.close' class="btn-close-mobile">
+                        x
+                    </button>
+                </div>
+
+                <ul class="sidebar">
+                    <div class="btns-mobile">
+                        <button class="btn" on="tap:AMP.setState({ 
+                        modalFormWhats: false,
+                        modalFormCorreo: true,
+                        modalFormCita: true,
+                        modalFormTestDrive: true,
+                    }),sidebar1.close">
+                            Whatsapp
+                        </button>
+                        <button class="btn" on="tap:AMP.setState({
+                        modalFormCorreo: false,
+                        modalFormCita: true,
+                        modalFormTestDrive: true,
+                        modalFormWhats: true,
+                    }),sidebar1.close">
+                            Correo
+                        </button>
+                        <button class="btn" on="tap:AMP.setState({ 
+                        modalFormTestDrive: false, 
+                        modalFormCita: true, 
+                        modalFormCorreo: true, 
+                        modalFormWhats: true,
+                    }),sidebar1.close">
+                            Test Drive
+                        </button>
+                        <button class="btn" on="tap:AMP.setState({ 
+                        modalFormCita: false, 
+                        modalFormTestDrive: true, 
+                        modalFormCorreo: true, 
+                        modalFormWhats: true,
+                    }),sidebar1.close">
+                            Cita Taller
+                        </button>
+                        <button class="btn" on="tap:AMP.setState({ Linea: Linea == null ? false : !Linea })">Línea de atención</button>
+                        <ul hidden [hidden]="Linea" class="submenu-linea-mobile">
+                                <li class="lineas-type">Telefonos nuevos</li>
+                                <li>
+                                    <a href="tel:0314842098"> Bogotá 031 4842098</a>
+                                </li>
+                                <li>
+                                    <a href="tel:0343106818"> Medellín 034 3106818</a>
+                                </li>
+                                <li>
+                                    <a href="tel:326082218"> Cali 032 6082218</a>
+                                </li>
+    
+                                <li class="lineas-type">Teléfonos posventa</li>
+                                <li>
+                                    <a href="tel:0314842098"> Bogotá: 031 4842098</a>
+                                </li>
+                                <li>
+                                    <a href="tel:0343106818"> Medellín: 034 3106818</a>
+                                </li>
+                                <li>
+                                    <a href="tel:0326082218"> Cali: 032 6082218</a>
+                                </li>
+                            </ul>
+                    </div>                    
+                    
+                    <li>
+                        <a href="carros-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="imagem de um veiculo" src="./src/images/icon-car.svg" width="25" height="25"
+                                class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Modelos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="ofertas-promociones-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="A view of the sea" src="./src/images/icon-bell.svg" width="25" height="25"
+                                class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Ofertas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="sedes-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="A view of the sea" src="./src/images/icon-home.svg" width="25" height="25"
+                                class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Nuestras Sedes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cita-taller-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="A view of the sea" src="./src/images/icon-medal.svg" width="25" height="25"
+                                class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Cita Taller
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="convenio-corporativo-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="imagem de uma pasta" src="./src/images/icon-corporative.svg" width="25"
+                                height="25" class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Corporativo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="seguro-de-carro-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="imagem de um sifrao de dinheo" src="./src/images/icon-writing-gray.svg"
+                                width="25" height="25" class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Finazul
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="repuestos-accesorios-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="A view of the sea" src="./src/images/extension-24px.svg" width="25"
+                                height="25" class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Repuestos y Accessorios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto-honda-concesionario-colwagen-chia.html">
+                            <amp-img alt="A view of the sea" src="./src/images/perm_phone_msg-24px.svg" width="25"
+                                height="25" class="icon-menu-vertical img-grayscale">
+                            </amp-img>
+                            Contáctanos
+                        </a>
+                    </li>
+                    <ul class="redes-mobile">
+                        <li class="nav-icon mr-5">
+                            <a href="https://www.facebook.com/grupo.colwagen" target="_blank">
+                                <amp-img src="./src/images/icon-facebook-black.svg" width="25" height="25">
+                                </amp-img>
+                            </a>
+                        </li>
+
+                        <li class="nav-icon mr-5">
+                            <a href="https://www.instagram.com/volkswagen_colwagen/" target="_blank">
+                                <amp-img src="./src/images/instagram.svg" width="25" height="25">
+                                </amp-img>
+                            </a>
+                        </li>
+
+                        <li class="nav-icon mr-5">
+                            <a href="https://co.linkedin.com/company/colwagen" target="_blank">
+                                <amp-img src="./src/images/botao-do-logotipo-do-linkedin.svg" width="25" height="25">
+                                </amp-img>
+                            </a>
+                        </li>
+
+                    </ul>
+                </ul>
+            </amp-sidebar>
+        </div>
+    </header>
+</section>

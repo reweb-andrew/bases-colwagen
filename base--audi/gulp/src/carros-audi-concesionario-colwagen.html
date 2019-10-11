@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block description %} <meta name="description" content="Carros Nuevos en Colwagen. Las mejores Ofertas de Carros Nuevos Audi con todo el Respaldo de Colwagen en Bogotá y Chía.">
+{% endblock %}
+{% block title %}Carros Nuevos en Colwagen - Concesionario Audi{% endblock %} 
+{% block page %}
+
+  <!-- início banner desktop -->
+  {% include 'includes/filter-cars.html' %}
+  <section class="w-100 grayBack">
+    <amp-list 
+    height="2400"
+    src="{{apiBaseURL}}/api/vehicles/dealers/115/categories"
+    single-item
+    id="amp-list"
+    >
+    <div overflow="" role="button" class="showMore" tabindex="0">
+      <a class="btn btnShowMore" href="#">Ver Más</a>
+    </div>
+    
+    <template type="amp-mustache">
+      
+      {% verbatim %}
+        {{^ results}}
+          <p>Sem resultados</p>
+        {{/results}}
+
+        {{#results}}
+        <div class="itemCategory w-100" id="category{{id}}">
+            <div class="container">
+              <h1 class="title-category">{{category}}</h1>
+              <div class="selection">
+                {{#cars}}
+                <div class="selection_car">
+                    <a href="detalhe.html?id={{id}}-{{slug}}-colwagen-bogota-chia" class="link-image-list-cars">
+                    <amp-img 
+                      src="https://img1.static.reweb.io/i/800/500/{{ secureImageURL}}{{image.image}}" 
+                      width="450" 
+                      height="270"
+                    layout="responsive">
+                    </amp-img>
+                    <p class="name-car-mobile">{{name}}</p>
+                    </a>
+                </div>
+                {{/cars}}
+              </div>
+            </div>
+        </div>
+        {{/results}}
+      {% endverbatim %} 
+    </template>
+  </amp-list>
+</section>
+{% endblock %}

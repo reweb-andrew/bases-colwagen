@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block description %}
+<meta name="description" content="Cita Taller en Colwagen - Concesionario Audi en Bogotá y Chía.
+">
+{% endblock %}
+{% block title %}Cita Taller en Colwagen - Concesionario Audi
+{% endblock %}
+{% block page %}
+
+<!-- início banner + form -->
+<section class="container-vw posventa mb-30">
+  <h1 class="title_h1">Cita Taller Audi</h1>
+  <div class="detail_content">
+
+    <article class="detail_image">
+      <amp-img alt="" src="./src/images/banner-taller.png" width="800" height="330" layout="responsive">
+      </amp-img>
+
+      <div class="descrition">
+        <h2 class="vw-title-info-contactanos ">
+          PROGRAMA TU VISITA AL TALLER
+        </h2>
+        <p>
+          La fecha y hora de atención solicitada por los clientes está sujeta a disponibilidad de las agendas y talleres
+          de Colwagen. También puedes reservar tus citas para el mantenimiento de tu vehículo vía telefónica, llámanos,
+          nosotros la asignaremos con el horario que más te convenga.
+        </p>
+        <div class="container-tel-vitrina">
+          <div>
+            <h4 class="name-vitrina">Bogotá:</h4>
+            <p class="content-vitrina">(031) 484 2098</p>
+          </div>
+
+          <div>
+            <h4 class="name-vitrina">Medellin:</h4>
+            <p class="content-vitrina">(034) 310 6818</p>
+          </div>
+
+          <div>
+            <h4 class="name-vitrina">Cali:</h4>
+            <p class="content-vitrina">(032) 608 2218</p>
+          </div>
+
+        </div>
+      </div>
+      <div>
+        <a href="https://www.zonapagos.com/t_colwagen/pagos.asp" target="_blank">
+          <button class="btn">Pago en Línea</button>
+        </a>
+      </div>
+    </article>
+
+    <article class="form_contacto">
+      {% set formId = 'formPostVentaCitaTaller' %}
+      {% include 'includes/form-default.html' %}
+      <input type="hidden" name="meio_captacao" value="SITE_POSVENTA_CITA_TALLER" />
+      <div class="form-group">
+        <h3 class="vw-title-form">
+          Agenda tu Cita Taller
+        </h3>
+      </div>
+      <div class="form-group">
+        <input name="nome" type="text" placeholder="Nombre completo" required>
+      </div>
+      <div class="form-group">
+        <input name="telefone" type="tel" {{maskTelefone}} placeholder="Celular" required>
+      </div>
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo" required>
+      </div>
+
+      {% include 'includes/select-cars.html' %}
+
+      <div class="form-group">
+        <input name="placa" type="text" placeholder="Placa" required>
+      </div>
+      <div class="form-group">
+        <input name="Kilometraje" type="text" placeholder="Kilometraje" required>
+      </div>
+      <div class="form-group">
+        <input name="data" type="date" placeholder="Fecha" required>
+      </div>
+
+      {% include 'includes/select-horarios.html' %}
+
+      <div class="form-group">
+        <select name="quien_lleva_el_carro" required>
+          <option value="">¿Quién lleva el carro?</option>
+          <option value="">Servicio de grúa a mi cargo</option>
+          <option value="">Yo llevo el vehículo directo al taller</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select name="alternativa_de_movilidade" required>
+          <option value="">Alternativa de movilidad?</option>
+          <option value="">Rentar un vehículo a mi cargo</option>
+          <option value="">Taxi a mi cargo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea name="mensaje" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+      </div>
+      <div class="politica">
+        <label for="checkbox">
+          <input type="checkbox" name="acepto_politica" checked value="si">
+          <a href="#" on="tap:AMP.setState({openModal: false})">
+            Acepto Políticas de Privacidad
+          </a>
+        </label>
+      </div>
+      <div class="alert-info" submitting>
+        <template type="amp-mustache">
+          <span class="alert-info-span">
+            Enviando formulário...
+          </span>
+        </template>
+      </div>
+      <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+          <span class="alert-danger-span">
+            {% verbatim %}
+            {{ message}}
+            {% endverbatim %}
+          </span>
+        </template>
+      </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+      </div>
+      
+      </form>
+
+    </article>
+  </div>
+</section>
+<!-- fim banner + form -->
+
+{% endblock %}

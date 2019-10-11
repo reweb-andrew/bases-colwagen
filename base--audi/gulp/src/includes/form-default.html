@@ -1,0 +1,24 @@
+{% if not telefoneWhatsAPI %}
+    {% set telefoneWhatsAPI = "573203744090 
+    " %}
+{% endif %}
+
+<form 
+action-xhr="{{apiBaseURL}}/api/lead/register"
+target="_top"
+method="POST"
+id="{{formId}}"
+
+
+{% if formId != 'formWhats' %}
+    on="submit-success:modal-confirmation,{{formId}}.clear"
+{% else %}
+
+{% endif %}
+
+>
+
+<input type="hidden" name="utm_source" value="QUERY_PARAM(utm_source)" data-amp-replace="QUERY_PARAM">
+<input type="hidden" name="midia" value="QUERY_PARAM(m)" data-amp-replace="QUERY_PARAM">
+<input type="hidden" name="referencia_externa" value="EXTERNAL_REFERRER" data-amp-replace="EXTERNAL_REFERRER">
+<input type="hidden" name="referencia_documento" value="DOCUMENT_REFERRER" data-amp-replace="DOCUMENT_REFERRER">

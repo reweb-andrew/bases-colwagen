@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block title %}Colwagen - Concesionario Audi{% endblock %}
+{% block description %} <meta name="description" content="Concesionario Audi en Bogotá y Chía. Las mejores Ofertas de Carros Nuevos Audi con todo el Respaldo de Colwagen en Bogotá y Chía."> {% endblock %}
+{% block page %}
+
+  <!-- início banner desktop -->
+  <section class="section-banner banner-vw-desktop">
+    <figure>
+      <amp-img
+        id="banner"
+        src="./src/images/banner-home.png"
+        width="100vw"
+        height="520">
+        <a href="#" class="btn btn-banner">Lorem ipsum!</a>
+      </amp-img>
+    </figure>
+  </section>
+  <!-- fim banner desktop -->
+
+  <!-- inicio banner mobile -->
+  <section class="w-100 mb-20 banner-vw-mobile">
+    <figure class="">
+        <amp-img
+          class="banner-vw-mobile"
+          src="./src/images/banner-home.png"
+          width="100vw"
+          height="350">
+          <a href="#" class="btn btn-banner">Lorem ipsum!</a>
+        </amp-img>
+    </figure>
+  </section>
+  <!-- fim banner mobile -->
+
+  <!-- início main -->
+  <main class="container-main-vw mb-60 main-vw-desktop">
+    <div class="container-vw">
+
+      <ul class="list-home-images">
+        <li class="">
+          <amp-img
+            src="./src/images/destaque1.png" 
+            width="350"
+            height="230">
+            <a href="#" class="btn btn-right">Lorem ipsum!</a>
+          </amp-img>
+        </li>
+
+        <li class="">
+          <amp-img
+            class="mx-5"
+            src="./src/images/destaque2.png" 
+            width="350"
+            height="230">
+            <a href="#" class="btn btn-right">Lorem ipsum!</a>
+          </amp-img>    
+        </li>
+
+        <li class="">
+          <amp-img
+            src="./src/images/destaque3.png"
+            width="350"
+            height="230">
+            <a href="#" class="btn btn-right">Lorem ipsum!</a>
+          </amp-img>
+        </li>
+
+      </ul>
+    </div>
+  </main>
+  <!-- fim main -->
+
+  <!-- início main mobile -->
+  <section class="w-100 main-vw-mobile">
+    <main class="container-main-home">
+      <div class="highlights">
+
+        <figure class="mb-15">
+          <amp-img 
+            class="banner-vw-mobile" 
+            src="./src/images/destaque1.png" 
+            height="200"
+            width="800">
+            <a href="#" class="btn-image-vw btn">Bloco 1</a>
+          </amp-img>
+        </figure>
+
+        <figure class="mb-15">
+          <amp-img 
+            class="banner-vw-mobile" 
+            src="./src/images/destaque2.png" 
+            height="200"
+            width="800">
+            <a href="#" class="btn-image-vw btn">Bloco 2</a>
+          </amp-img>
+        </figure>
+
+        <figure class="mb-15">
+          <amp-img 
+            class="banner-vw-mobile" 
+            src="./src/images/destaque3.png" 
+            height="200"
+            width="800">
+            <a href="#" class="btn-image-vw btn">Bloco 2</a>
+          </amp-img>
+        </figure>
+
+      </div>
+    </main>
+  </section>
+  <!-- fim main mobile -->
+{% endblock %}

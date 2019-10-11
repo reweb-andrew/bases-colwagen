@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block description %} <meta name="description" content="Carros Nuevos en Colwagen. Las mejores Ofertas de Carros Nuevos Audi con todo el Respaldo de Colwagen en Bogotá y Chía.">
+{% endblock %}
+{% block title %}Carros Nuevos en Colwagen - Concesionario Audi en Bogotá y Chía{% endblock %} 
+{% block page %}
+
+<amp-animation id="clockAnim" layout="nodisplay">
+    <script type="application/json">
+      {
+      "duration": "3s",
+      "fill": "both",
+      "direction": "alternate",
+      "animations": [
+        {
+          "selector": "#clock-scene .clock-hand",
+          "keyframes": [
+            { "transform": "rotate(-180deg)" },
+            { "transform": "rotate(0deg)" }
+          ]
+        }
+      ]
+    }
+    </script>
+  </amp-animation>
+  
+  <!-- The clock container -->
+  <div id="clock-scene">
+    <!--
+      Use amp-position-observer to tie the movement of the clock scene within
+      the viewport to the timeline of the animation
+    -->
+    <amp-position-observer
+      intersection-ratios="1"
+      on="scroll:clockAnim.seekTo(percent=event.percent)"
+      layout="nodisplay">
+    </amp-position-observer>
+    <amp-img width=200 height=200 src="https://picsum.photos/id/1065/200/300">
+      <div class="clock-hand"></div>
+    </amp-img>
+  </div>
+
+  {% endblock %}

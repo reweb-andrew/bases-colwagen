@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block description %} <meta name="description" content="Ofertas y Promociones Carros Nuevos en Colwagen. Las mejores Ofertas de Carros Nuevos Audi en Bogotá y Chía.">
+{% endblock %}
+{% block title %}Ofertas y Promociones Carros Nuevos en Colwagen - Concesionario Audi{% endblock %}
+{% block page %}
+  <!-- início promociones desktop -->
+  <section class="container-vw promociones-desktop mb-30">
+    <h1 class="title_h1">Ofertas y Promociones Audi</h1>
+
+    {% for i in 0..5 %}
+    <div class="promociones_content pb-30">
+
+      <div class="promociones_image">
+          <amp-carousel id="carousel-with-lightbox" class="carousel-preview" height="500" width="510" type="carousel" lightbox>
+              <amp-img alt="Imagem promocional do vehiculo"
+              src="./src/images/promotion.jpg"
+              width="500"
+              height="500"
+             >
+            </amp-img>
+            </amp-carousel>
+
+      </div>
+
+      <div class="promociones_text">
+        <h2 class="title_h2">Promocion {{i}}</h2>
+        <p class="promo_description">
+          Tenemos algo exclusivo para ti ¿Quieres disfrutar de promociones especiales con Audi Colwagen? ¡Entonces estás de suerte! Infórmate de todo lo que puedes conseguir y no esperes más para conseguir tus descuentos especiales.
+        </p>
+        <button class="btn" on="tap:AMP.setState({ modalFormPromo: false, promoTitle: 'Promocion {{i}}'})" type="button">Solicitar Información</button>
+      </div>
+
+    </div>
+    {% endfor %}
+  </section>
+  <!-- fim promociones -->
+
+  <!-- modal form -->
+  <section class="form" hidden [hidden]="modalFormPromo" >
+      {% set formId = 'form_promo' %}
+      {% include 'includes/form-default.html' %}
+      <input type="hidden" name="meio_captacao" value="SITE_PROMOCAO" />
+      <button type="button" class="btn-close" on="tap:AMP.setState({ modalFormPromo: true })">X</button>
+      <div class="form-group">
+        <h3 class="vw-title-form">Promocion</h3>
+      </div>
+      <div class="form-group">
+        <input name="nome" type="text" placeholder="Nombre Completo" required="true">
+      </div>
+      <div class="form-group">
+        <input name="telefone" type="text" {{maskTelefone}} placeholder="Celular" required="true">
+      </div>
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo" required="true">
+      </div>
+      <div class="form-group">
+          <input name="promo" type="text" [value]="promoTitle" required="true" readonly>
+      </div>
+      <div class="form-group">
+        <textarea name="mensagem" id="" cols="30" rows="5" placeholder="Mensaje"></textarea>
+      </div>
+      <div class="politica">
+        <label for="checkbox">
+          <input type="checkbox" name="acepto_politica" checked value="si" id="">
+          <a href="#" on="tap:AMP.setState({openModal: false})">
+              Acepto Políticas de Privacidad
+          </a>
+        </label>
+      </div>
+      <div class="alert-info" submitting>
+          <template type="amp-mustache">
+            <span class="alert-info-span">
+              Enviando formulário...
+            </span>
+          </template>
+        </div>
+        <div class="alert-danger" submit-error>
+          <template type="amp-mustache">
+            <span class="alert-danger-span">
+              {% verbatim %}
+              {{ message}}
+              {% endverbatim %}
+            </span>
+          </template>
+        </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+      </div>
+
+    </form>
+  </section>
+  
+  {% endblock %}

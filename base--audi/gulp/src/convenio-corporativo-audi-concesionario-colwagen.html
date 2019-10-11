@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block description %}
+<meta name="description" content="Convenios Corporativo Colwagen - Concesionario Audi en Bogotá y Chía.">
+{% endblock %}
+{% block title %}Convenios Corporativo Colwagen - Concesionario Audi
+{% endblock %}
+{% block page %}
+
+<!-- início banner + form -->
+<section class="container-vw mb-30">
+  <h1 class="title_h1">Repuestos y Accesorios Audi</h1>
+  <h2 class="title_h2">Conoce los beneficios que tenemos para tu empresa</h2>
+  <div class="detail_content">
+    <article class="detail_image">
+      <amp-img alt="Imagem d" src="./src/images/imagem-de-marcacao.gif" width="800" height="330" layout="responsive">
+      </amp-img>
+
+      <div class="internal-car_descrition">
+        <h3 class="">Convenios Corporativos Audi</h3>
+        <p class="detail_content">
+        </p>
+      </div>
+    </article>
+
+    <article class="form_contacto">
+      {% set formId = 'formCorporativo' %}
+      {% include 'includes/form-default.html' %}
+      <input type="hidden" name="meio_captacao" value="SITE_CORPORATIVO" />
+      <div class="form-group">
+        <h3 class="vw-title-form">Aquí cotizamos lo que necesites para tu empresa</h3>
+      </div>
+      <div class="form-group">
+        <input name="nome_empresa" type="text" placeholder="Nombre de la empresa" required="true">
+      </div>
+      <div class="form-group">
+        <input name="nome" type="text" placeholder="Nombre completo" required="true">
+      </div>
+      <div class="form-group">
+        <input name="telefone" type="tel" {{maskTelefone}} placeholder="Celular" required>
+      </div>
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo" required="true">
+      </div>
+
+      {% include 'includes/select-cars.html' %}
+
+      <div class="form-group">
+        <textarea name="mensagem" id="" cols="30" rows="5" placeholder="Menssaje" required></textarea>
+      </div>
+      <div class="politica">
+        <label for="checkbox">
+          <input type="checkbox" name="acepto_politica" checked value="si" id="">
+          <a href="#" on="tap:AMP.setState({openModal: false})">
+            Acepto Políticas de Privacidad
+          </a>
+        </label>
+      </div>
+      <div class="alert-info" submitting>
+        <template type="amp-mustache">
+          <span class="alert-info-span">
+            Enviando formulário...
+          </span>
+        </template>
+      </div>
+      <div class="alert-danger" submit-error>
+        <template type="amp-mustache">
+          <span class="alert-danger-span">
+            {% verbatim %}
+            {{ message}}
+            {% endverbatim %}
+          </span>
+        </template>
+      </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Enviar</button>
+      </div>
+      </form>
+
+    </article>
+  </div>
+</section>
+
+{% endblock %}

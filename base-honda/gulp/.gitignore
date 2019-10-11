@@ -2,4 +2,4 @@ gulp/node_modules
 gulp/package-lock.json
 gulp/yarn.lock
 node_modules
-gulp/dist
+
